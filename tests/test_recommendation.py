@@ -6,9 +6,9 @@ from app.recovery import update_recovery
 from core import CardioSession, Movement, PercievedExertion, WeightedSet
 
 
-def test_recommendation_ranks_by_intensity():
+def test_recommendation_returns_individual_sets():
     user = User(id="u1", name="User")
-    ws1 = WeightedSet(
+    ws = WeightedSet(
         exercise_name="Dumbbell Bench",
         pattern=Movement.UPPER_PUSH,
         ex_weight=20,
@@ -17,31 +17,16 @@ def test_recommendation_ranks_by_intensity():
         ac_reps=5,
         pe=PercievedExertion.HIGH,
     )
-    ws2 = WeightedSet(
-        exercise_name="Dumbbell Row",
-        pattern=Movement.UPPER_PULL,
-        ex_weight=20,
-        ac_weight=20,
-        ex_reps=5,
-        ac_reps=5,
-        pe=PercievedExertion.MEDIUM,
-    )
-    update_recovery(user, [ws1, ws2], timestamp=dt.datetime.utcnow())
-    recs = recommend_workout(user, max_exercises=50)
-    names = [r["name"] for r in recs]
-    assert "Dumbbell Row" in names
-    assert "Dumbbell Bench" in names
-    assert names.index("Dumbbell Row") < names.index("Dumbbell Bench")
-    row = next(r for r in recs if r["name"] == "Dumbbell Row")
-    bench = next(r for r in recs if r["name"] == "Dumbbell Bench")
-    assert row["weight"] == 20
-    assert row["reps"] == 5
-    assert isinstance(row.get("sets"), int) and row["sets"] >= 1
-    assert bench["weight"] == 20
-    assert bench["reps"] == 5
-    assert isinstance(bench.get("sets"), int) and bench["sets"] >= 1
-    assert "reason" in row and isinstance(row["reason"], str)
-    assert "reason" in bench and isinstance(bench["reason"], str)
+    update_recovery(user, [ws], timestamp=dt.datetime.utcnow())
+    recs = recommend_workout(user, max_exercises=5)
+    assert isinstance(recs, list) and recs
+    for item in recs:
+        assert "name" in item
+        assert "reason" in item
+        if "reps" in item:
+            assert "weight" in item
+        else:
+            assert "duration" in item and "heart_rate" in item
 
 
 def test_recommendation_filters_fatigued_muscles():
@@ -62,29 +47,19 @@ def test_recommendation_filters_fatigued_muscles():
     if isinstance(recs, list):
         for item in recs:
             assert "reason" in item and isinstance(item["reason"], str)
-            if item.get("sets") is not None:
-                assert isinstance(item["sets"], int)
 
 
-def test_recommendation_ranks_cardio_history():
+def test_recommendation_cardio_removed_when_fatigued():
     user = User(id="u1", name="User")
     run = CardioSession(
         exercise_name="Run",
-        ex_duration=30,
-        ac_duration=30,
+        ex_duration=60,
+        ac_duration=60,
         ex_heart_rate=170,
         ac_heart_rate=170,
         pe=PercievedExertion.HIGH,
     )
     update_recovery(user, [run], timestamp=dt.datetime.utcnow())
-    recs = recommend_workout(user, max_exercises=25)
-    names = [r["name"] for r in recs]
-    assert "Jump Rope" in names
-    assert "Run" in names
-    assert names.index("Jump Rope") < names.index("Run")
-    run_rec = next(r for r in recs if r["name"] == "Run")
-    assert run_rec["duration"] == 30
-    assert run_rec["heart_rate"] == 170
-    assert "sets" not in run_rec
-    for item in recs:
-        assert "reason" in item and isinstance(item["reason"], str)
+    recs = recommend_workout(user, max_exercises=10)
+    names = [r["name"] for r in recs] if isinstance(recs, list) else []
+    assert "Run" not in names

@@ -113,18 +113,15 @@ def recommend_workout(
     max_exercises: int = 5,
     fatigue_threshold: float = 100.0,
 ) -> Union[List[Dict[str, Union[str, float, int]]], str]:
-    """Return recommended exercises with basic parameters or ``"rest"``.
+    """Return a list of individual set recommendations or ``"rest"``.
 
-    Each recommendation includes the exercise ``name`` and, when available,
-    suggested ``reps``/``weight`` for weighted movements or ``duration`` and
-    ``heart_rate`` for cardio.
-    The algorithm combines the user's recovery state with recent workout
-    history. Exercises performed frequently and at high intensity in the recent
-    past receive a lower score so the recommendations naturally rotate through
-    movements and account for perceived effort.
+    The function looks at the user's recovery scores and recent history to
+    propose single sets (or cardio blocks) that gradually build fatigue toward
+    ``TARGET_FATIGUE``. Sets are added only until the target for a movement is
+    reached so recommendations don't overshoot the desired workload.
     """
-    # ensure recovery decay applied to current time
-    user.recovery.decay(datetime.utcnow())
+    now = datetime.utcnow()
+    user.recovery.decay(now)
 
     # determine which movement patterns are too fatigued
     fatigued = {
@@ -186,14 +183,14 @@ def recommend_workout(
         for ex_name, _sets in session_counter.items():
             history[ex_name]["sessions"] += 1
 
-    # score candidate exercises
-    scored: List[tuple[float, Dict[str, Union[str, float, int]]]] = []
+    # Build candidate plans and scores
+    scored: List[Dict[str, Union[str, float, int]]] = []
     for ex in EXERCISES.values():
         movement = Movement(ex["movement"])
         if movement not in allowed_movements:
             continue
 
-        muscles = []
+        muscles: List[MuscleUsage] = []
         for md in ex.get("muscles", []):
             try:
                 muscles.append(
@@ -207,21 +204,18 @@ def recommend_workout(
                 continue
         try:
             ex_obj = Exercise(
-                name=ex["name"], movement=Movement(ex["movement"]), muscles=muscles
+                name=ex["name"], movement=movement, muscles=muscles
             )
         except Exception:
             continue
 
-        # base factors from recovery
         base = 1.0 / (1.0 + user.recovery.scores.get(movement, 0.0) / 100.0)
-
         muscle_fatigues = [
             user.recovery.muscle_scores.get(u.muscle, 0.0) for u in ex_obj.muscles
         ]
         quality_fatigues = [
             user.recovery.quality_scores.get(u.quality, 0.0) for u in ex_obj.muscles
         ]
-
         muscle_factor = 1.0 / (
             1.0 + (max(muscle_fatigues) if muscle_fatigues else 0.0) / 100.0
         )
@@ -231,8 +225,8 @@ def recommend_workout(
 
         stats = history.get(ex["name"])
         if stats and stats["count"]:
-            avg_work = stats["workload"] / stats["count"]
-            intensity_factor = 1.0 / (1.0 + (avg_work / 100.0))
+            avg_work_hist = stats["workload"] / stats["count"]
+            intensity_factor = 1.0 / (1.0 + (avg_work_hist / 100.0))
         else:
             intensity_factor = 1.0
 
@@ -249,53 +243,53 @@ def recommend_workout(
                     plan["sets"] = int(round(stats["count"] / stats["sessions"]))
                     avg_work = stats["workload"] / stats["count"]
 
-        # adjust suggested volume to move toward target fatigue
-        target = TARGET_FATIGUE.get(movement, fatigue_threshold)
-        current = user.recovery.scores.get(movement, 0.0)
-        needed = max(target - current, 0.0)
-        if needed and avg_work:
-            if movement == Movement.CARDIO:
-                factor = needed / avg_work
-                plan["duration"] = max(5, int(round(plan["duration"] * factor)))
-            else:
-                sets_needed = ceil(needed / avg_work)
-                plan["sets"] = max(1, min(sets_needed, 5))
-        
-        fatigue = user.recovery.scores.get(movement, 0.0)
-        target = TARGET_FATIGUE.get(movement, fatigue_threshold)
-        if stats and stats["sessions"]:
-            sessions = stats["sessions"]
-            if movement == Movement.CARDIO:
-                plan["reason"] = (
-                    f"This cardio exercise was selected because your {movement.value.replace('_', ' ')} pattern "
-                    f"is relatively recovered (fatigue {fatigue:.1f}). Target fatigue is {target:.0f}. "
-                    f"Duration {plan['duration']} min at {plan['heart_rate']} bpm reflects the average of your last {sessions} session(s)."
-                )
-            else:
-                plan["reason"] = (
-                    f"Your {movement.value.replace('_', ' ')} pattern is relatively recovered (fatigue {fatigue:.1f}). "
-                    f"Target fatigue is {target:.0f}. Suggested {plan['sets']}x{plan['reps']} at {plan['weight']} weight "
-                    f"is based on the average of your last {sessions} session(s)."
-                )
-        else:
-            if movement == Movement.CARDIO:
-                plan["reason"] = (
-                    f"This cardio exercise was selected because your {movement.value.replace('_', ' ')} pattern "
-                    f"is relatively recovered (fatigue {fatigue:.1f}). Target fatigue is {target:.0f}. "
-                    f"No recent history found so default duration {plan['duration']} min and heart rate {plan['heart_rate']} bpm are suggested."
-                )
-            else:
-                plan["reason"] = (
-                    f"Your {movement.value.replace('_', ' ')} pattern is relatively recovered (fatigue {fatigue:.1f}). "
-                    f"Target fatigue is {target:.0f}. No recent history found so default {plan['sets']}x{plan['reps']} at {plan['weight']} weight is suggested."
-                )
-
-        plan.pop("avg_work", None)
+        plan["movement"] = movement
+        plan["avg_work"] = avg_work
         score = base * muscle_factor * quality_factor * intensity_factor
-        scored.append((score, plan))
+        plan["score"] = score
+        scored.append(plan)
 
-    scored.sort(key=lambda t: t[0], reverse=True)
-    return [rec for _, rec in scored[:max_exercises]] if scored else "rest"
+    scored.sort(key=lambda p: p["score"], reverse=True)
+
+    allocated: DefaultDict[Movement, float] = defaultdict(float)
+    recommendations: List[Dict[str, Union[str, float, int]]] = []
+
+    for plan in scored:
+        if len(recommendations) >= max_exercises:
+            break
+
+        movement: Movement = plan["movement"]  # type: ignore[assignment]
+        target = TARGET_FATIGUE.get(movement, fatigue_threshold)
+        current = user.recovery.scores.get(movement, 0.0) + allocated[movement]
+        needed = target - current
+        if needed <= 0 or not plan["avg_work"]:
+            continue
+
+        sets = plan.get("sets", 1)
+        for _ in range(int(sets)):
+            if len(recommendations) >= max_exercises or needed <= 0:
+                break
+            rec: Dict[str, Union[str, float, int]] = {"name": plan["name"]}
+            if movement == Movement.CARDIO:
+                rec["duration"] = plan["duration"]
+                rec["heart_rate"] = plan["heart_rate"]
+            else:
+                rec["weight"] = plan["weight"]
+                rec["reps"] = plan["reps"]
+
+            rec_work = plan["avg_work"]  # type: ignore[index]
+            rec["reason"] = (
+                f"{movement.value.replace('_', ' ')} fatigue {current:.1f}/{target:.0f}. "
+                f"This set adds about {rec_work:.1f} workload."
+            )
+            recommendations.append(rec)
+            allocated[movement] += rec_work
+            current += rec_work
+            needed = target - current
+            if needed <= 0:
+                break
+
+    return recommendations if recommendations else "rest"
 
 
 def recommend_movements(
