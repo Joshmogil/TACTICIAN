@@ -61,7 +61,7 @@ def _parse_pe(val) -> PercievedExertion:
     if not n:
         return PercievedExertion.MEDIUM
     n = max(1, min(4, int(round(n))))
-    return PercievedExertion(n)
+    return PercievedExertion(str(n))
 
 
 def df_to_workout(date: datetime.date, df: pd.DataFrame, user_id: str = "default") -> Workout:
