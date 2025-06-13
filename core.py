@@ -77,6 +77,9 @@ class WeightedSet(BaseModel):
     def workload(self) -> float:
         """Estimate workload using actual values and perceived effort."""
         weight = self.ac_weight if self.ac_weight else self.ex_weight
+        # Use a small default for bodyweight movements so workload isn't zero
+        if not weight:
+            weight = 1.0
         reps = self.ac_reps if self.ac_reps else self.ex_reps
         # scale tonnage by perceived exertion on a 0-1 range
         intensity = int(self.pe.value) / int(PercievedExertion.MAX.value)
