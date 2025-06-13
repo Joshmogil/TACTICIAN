@@ -265,7 +265,9 @@ def recommend_workout(
         if needed <= 0 or not plan["avg_work"]:
             continue
 
-        sets = plan.get("sets", 1)
+        rec_work = plan["avg_work"]  # type: ignore[index]
+        sets_needed = int(ceil(needed / rec_work)) if rec_work else 1
+        sets = min(sets_needed, max_exercises - len(recommendations))
         for _ in range(int(sets)):
             if len(recommendations) >= max_exercises or needed <= 0:
                 break
@@ -277,7 +279,6 @@ def recommend_workout(
                 rec["weight"] = plan["weight"]
                 rec["reps"] = plan["reps"]
 
-            rec_work = plan["avg_work"]  # type: ignore[index]
             rec["reason"] = (
                 f"{movement.value.replace('_', ' ')} fatigue {current:.1f}/{target:.0f}. "
                 f"This set adds about {rec_work:.1f} workload."
