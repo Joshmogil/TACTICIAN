@@ -7,7 +7,7 @@ from fastapi import APIRouter
 
 from app.models import User
 from app.recovery import update_recovery
-from app.recommendation import recommend_workout, recommend_movements
+from app.recommendation import recommend_workout
 from workout import Workout
 
 router = APIRouter()
