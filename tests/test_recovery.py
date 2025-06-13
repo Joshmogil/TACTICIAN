@@ -2,14 +2,15 @@ import datetime as dt
 
 from app.models import User
 from app.recovery import update_recovery
-from core import WeightedSet, Movement, PercievedExertion
+from core import Exercise, Movement, MuscleQuality, PercievedExertion, WeightedSet
+from load_exercises import load_exercises
 from workout import load_workout_data
 
 
 def test_recovery_update_and_decay():
     user = User(id="u1", name="User")
     ws = WeightedSet(
-        exercise_name="Bench",
+        exercise_name="Dumbbell Bench",
         pattern=Movement.UPPER_PUSH,
         ex_weight=100,
         ac_weight=100,
@@ -21,11 +22,27 @@ def test_recovery_update_and_decay():
     update_recovery(user, [ws], timestamp=t1)
     # initial load
     assert user.recovery.scores[Movement.UPPER_PUSH] == ws.workload
+    ex = Exercise(**load_exercises()["Dumbbell Bench"])
+    for usage in ex.muscles:
+        expected = ws.workload * usage.amount
+        assert user.recovery.muscle_scores[usage.muscle] == expected
+    strength_total = sum(
+        ws.workload * u.amount
+        for u in ex.muscles
+        if u.quality == MuscleQuality.STRENGTH
+    )
+    assert user.recovery.quality_scores[MuscleQuality.STRENGTH] == strength_total
 
     # after 48 hours scores should decay by half
     t2 = t1 + dt.timedelta(hours=48)
     update_recovery(user, [], timestamp=t2)
     assert user.recovery.scores[Movement.UPPER_PUSH] == ws.workload * 0.5
+    for usage in ex.muscles:
+        assert (
+            user.recovery.muscle_scores[usage.muscle]
+            == ws.workload * usage.amount * 0.5
+        )
+    assert user.recovery.quality_scores[MuscleQuality.STRENGTH] == strength_total * 0.5
 
 
 def test_load_workout_data_pipeline():
