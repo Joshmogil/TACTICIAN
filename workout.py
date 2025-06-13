@@ -160,7 +160,12 @@ def load_workout_data(
     return workout_data
 
 
-def load_user_history(user_id: str, directory: str = "_Workouts") -> Dict[str, Workout]:
+def load_user_history(
+    user_id: str,
+    directory: str = "_Workouts",
+    *,
+    bodyweight: float | None = None,
+) -> Dict[str, Workout]:
     """Load workouts from ``directory`` and apply them to a User."""
 
     from datetime import datetime, time
@@ -168,6 +173,8 @@ def load_user_history(user_id: str, directory: str = "_Workouts") -> Dict[str, W
     from app.recovery import update_recovery
 
     user = get_user(user_id)
+    if bodyweight is not None:
+        user.default_bodyweight = bodyweight
     data = load_workout_data(
         directory=directory, user_id=user_id, bodyweight=user.default_bodyweight
     )
