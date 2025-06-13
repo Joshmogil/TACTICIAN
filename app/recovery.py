@@ -21,3 +21,7 @@ class WorkoutRecord(BaseModel):
     date: datetime
     work_done: List[WorkDone]
 
+
+# resolve forward reference in User once WorkoutRecord is defined
+User.model_rebuild()
+
