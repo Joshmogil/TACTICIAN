@@ -5,6 +5,9 @@ from typing import List, Literal, Union
 from pydantic import BaseModel
 
 
+# Approximate load used when an exercise has no external weight.
+DEFAULT_BODYWEIGHT = 45.0
+
 class Movement(str, Enum):
     UPPER_PUSH = "upper_push"
     UPPER_PULL = "upper_pull"
@@ -71,15 +74,18 @@ class WeightedSet(BaseModel):
     ex_reps: int
     ac_reps: int
 
+    bodyweight: float = DEFAULT_BODYWEIGHT
+
     pe: PercievedExertion
 
     @property
     def workload(self) -> float:
         """Estimate workload using actual values and perceived effort."""
         weight = self.ac_weight if self.ac_weight else self.ex_weight
-        # Use a small default for bodyweight movements so workload isn't zero
+        # Use a more realistic default weight for bodyweight movements so
+        # they accumulate meaningful fatigue.
         if not weight:
-            weight = 1.0
+            weight = self.bodyweight
         reps = self.ac_reps if self.ac_reps else self.ex_reps
         # scale tonnage by perceived exertion on a 0-1 range
         intensity = int(self.pe.value) / int(PercievedExertion.MAX.value)
