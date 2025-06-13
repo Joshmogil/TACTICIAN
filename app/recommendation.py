@@ -67,9 +67,12 @@ def recommend_workout(
     *,
     max_exercises: int = 5,
     fatigue_threshold: float = 100.0,
- ) -> Union[List[Dict[str, object]], str]:
-    """Return a list of workout plans or ``"rest"``.
+) -> Union[List[Dict[str, Union[str, float, int]]], str]:
+    """Return recommended exercises with basic parameters or ``"rest"``.
 
+    Each recommendation includes the exercise ``name`` and, when available,
+    suggested ``reps``/``weight`` for weighted movements or ``duration`` and
+    ``heart_rate`` for cardio.
     The algorithm combines the user's recovery state with recent workout
     history. Exercises performed frequently and at high intensity in the recent
     past receive a lower score so the recommendations naturally rotate through
@@ -99,19 +102,41 @@ def recommend_workout(
         lambda: {
             "workload": 0.0,
             "count": 0,
+            "weight_total": 0.0,
+            "reps_total": 0.0,
+            "duration_total": 0.0,
+            "hr_total": 0.0,
         }
     )
     for record in user.workouts:
         if record.date < cutoff:
             continue
         for item in record.work_done:
-            if isinstance(item, (WeightedSet, CardioSession)):
+            if isinstance(item, WeightedSet):
                 stats = history[item.exercise_name]
                 stats["workload"] += item.workload
                 stats["count"] += 1
+                weight = item.ac_weight if item.ac_weight else item.ex_weight
+                reps = item.ac_reps if item.ac_reps else item.ex_reps
+                stats["weight_total"] += weight
+                stats["reps_total"] += reps
+            elif isinstance(item, CardioSession):
+                stats = history[item.exercise_name]
+                stats["workload"] += item.workload
+                stats["count"] += 1
+                duration = (
+                    item.ac_duration if item.ac_duration else item.ex_duration
+                )
+                hr = (
+                    item.ac_heart_rate
+                    if item.ac_heart_rate
+                    else item.ex_heart_rate
+                )
+                stats["duration_total"] += duration
+                stats["hr_total"] += hr
 
     # score candidate exercises
-    scored: List[tuple[float, str]] = []
+    scored: List[tuple[float, Dict[str, Union[str, float, int]]]] = []
     for ex in EXERCISES.values():
         movement = Movement(ex["movement"])
         if movement not in allowed_movements:
@@ -160,31 +185,17 @@ def recommend_workout(
         else:
             intensity_factor = 1.0
 
+        rec: Dict[str, Union[str, float, int]] = {"name": ex["name"]}
+        if stats and stats["count"]:
+            if movement == Movement.CARDIO:
+                rec["duration"] = stats["duration_total"] / stats["count"]
+                rec["heart_rate"] = stats["hr_total"] / stats["count"]
+            else:
+                rec["weight"] = stats["weight_total"] / stats["count"]
+                rec["reps"] = int(round(stats["reps_total"] / stats["count"]))
+
         score = base * muscle_factor * quality_factor * intensity_factor
-        scored.append((score, ex["name"]))
+        scored.append((score, rec))
 
     scored.sort(key=lambda t: t[0], reverse=True)
-    if not scored:
-        return "rest"
-
-    plans: List[Dict[str, object]] = []
-    for _, name in scored[:max_exercises]:
-        plans.append(_build_plan(user, name))
-
-    return plans
-
-
-def recommend_movements(
-    user: User, *, fatigue_threshold: float = 100.0
-) -> List[Movement]:
-    """Return movement patterns suitable for the next session.
-
-    The movements are sorted from least to most fatigued and filtered using the
-    provided ``fatigue_threshold``.
-    """
-    user.recovery.decay(datetime.utcnow())
-    scored = sorted(
-        [(m, user.recovery.scores.get(m, 0.0)) for m in Movement],
-        key=lambda t: t[1],
-    )
-    return [m for m, score in scored if score <= fatigue_threshold]
+    return [rec for _, rec in scored[:max_exercises]] if scored else "rest"
