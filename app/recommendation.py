@@ -185,17 +185,33 @@ def recommend_workout(
         else:
             intensity_factor = 1.0
 
-        rec: Dict[str, Union[str, float, int]] = {"name": ex["name"]}
+        plan = _build_plan(user, ex["name"])
         if stats and stats["count"]:
             if movement == Movement.CARDIO:
-                rec["duration"] = stats["duration_total"] / stats["count"]
-                rec["heart_rate"] = stats["hr_total"] / stats["count"]
+                plan["duration"] = int(round(stats["duration_total"] / stats["count"]))
+                plan["heart_rate"] = int(round(stats["hr_total"] / stats["count"]))
             else:
-                rec["weight"] = stats["weight_total"] / stats["count"]
-                rec["reps"] = int(round(stats["reps_total"] / stats["count"]))
+                plan["weight"] = round(stats["weight_total"] / stats["count"], 1)
+                plan["reps"] = int(round(stats["reps_total"] / stats["count"]))
 
         score = base * muscle_factor * quality_factor * intensity_factor
-        scored.append((score, rec))
+        scored.append((score, plan))
 
     scored.sort(key=lambda t: t[0], reverse=True)
     return [rec for _, rec in scored[:max_exercises]] if scored else "rest"
+
+
+def recommend_movements(
+    user: User, *, fatigue_threshold: float = 100.0
+) -> List[Movement]:
+    """Return movement patterns suitable for the next session.
+
+    The movements are sorted from least to most fatigued and filtered using the
+    provided ``fatigue_threshold``.
+    """
+    user.recovery.decay(datetime.utcnow())
+    scored = sorted(
+        [(m, user.recovery.scores.get(m, 0.0)) for m in Movement],
+        key=lambda t: t[1],
+    )
+    return [m for m, score in scored if score <= fatigue_threshold]
