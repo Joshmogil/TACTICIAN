@@ -1,0 +1,535 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "pformat",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "jmespath",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "exceptions",
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "isExtraImport": true,
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "cardio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cardio",
+        "description": "cardio",
+        "detail": "cardio",
+        "documentation": {}
+    },
+    {
+        "label": "core",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "core",
+        "description": "core",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "lower_pull",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "lower_pull",
+        "description": "lower_pull",
+        "detail": "lower_pull",
+        "documentation": {}
+    },
+    {
+        "label": "lower_push",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "lower_push",
+        "description": "lower_push",
+        "detail": "lower_push",
+        "documentation": {}
+    },
+    {
+        "label": "upper_pull",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "upper_pull",
+        "description": "upper_pull",
+        "detail": "upper_pull",
+        "documentation": {}
+    },
+    {
+        "label": "upper_push",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "upper_push",
+        "description": "upper_push",
+        "detail": "upper_push",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "exp",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "os.path",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.path",
+        "description": "os.path",
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "google.auth.transport.requests",
+        "description": "google.auth.transport.requests",
+        "isExtraImport": true,
+        "detail": "google.auth.transport.requests",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "google.auth.transport.requests",
+        "description": "google.auth.transport.requests",
+        "isExtraImport": true,
+        "detail": "google.auth.transport.requests",
+        "documentation": {}
+    },
+    {
+        "label": "Credentials",
+        "importPath": "google.oauth2.credentials",
+        "description": "google.oauth2.credentials",
+        "isExtraImport": true,
+        "detail": "google.oauth2.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "Credentials",
+        "importPath": "google.oauth2.credentials",
+        "description": "google.oauth2.credentials",
+        "isExtraImport": true,
+        "detail": "google.oauth2.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "InstalledAppFlow",
+        "importPath": "google_auth_oauthlib.flow",
+        "description": "google_auth_oauthlib.flow",
+        "isExtraImport": true,
+        "detail": "google_auth_oauthlib.flow",
+        "documentation": {}
+    },
+    {
+        "label": "InstalledAppFlow",
+        "importPath": "google_auth_oauthlib.flow",
+        "description": "google_auth_oauthlib.flow",
+        "isExtraImport": true,
+        "detail": "google_auth_oauthlib.flow",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "isExtraImport": true,
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "isExtraImport": true,
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "HttpError",
+        "importPath": "googleapiclient.errors",
+        "description": "googleapiclient.errors",
+        "isExtraImport": true,
+        "detail": "googleapiclient.errors",
+        "documentation": {}
+    },
+    {
+        "label": "HttpError",
+        "importPath": "googleapiclient.errors",
+        "description": "googleapiclient.errors",
+        "isExtraImport": true,
+        "detail": "googleapiclient.errors",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "MediaIoBaseDownload",
+        "importPath": "googleapiclient.http",
+        "description": "googleapiclient.http",
+        "isExtraImport": true,
+        "detail": "googleapiclient.http",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": ".venv.bin.jp",
+        "description": ".venv.bin.jp",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
+        "detail": ".venv.bin.jp",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class Movement(str, Enum):\n    UPPER_PUSH = \"upper_push\"\n    UPPER_PULL = \"upper_pull\"\n    LOWER_PUSH = \"lower_push\"\n    LOWER_PULL = \"lower_pull\"\n    CORE = \"core\"\n    CARDIO = \"cardio\"\nclass Muscle(str, Enum):\n    LATS = \"lats\"\n    CHEST = \"chest\"",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Muscle",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class Muscle(str, Enum):\n    LATS = \"lats\"\n    CHEST = \"chest\"\n    FRONT_DELTS = \"front_shoulder\"\n    MEDIAL_DELTS = \"medial_delts\"\n    REAR_DELTS = \"rear_delts\"\n    TRAPS = \"traps\"\n    TRICEPS = \"triceps\"\n    BICEPS = \"biceps\"\n    FOREARMS = \"forearms\"",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleQuality",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class MuscleQuality(str, Enum):\n    ENERGY = \"energy\"\n    STRENGTH = \"strength\"\nclass MuscleUsage(BaseModel):\n    muscle: Muscle\n    amount: float\n    quality: MuscleQuality\nclass Exercise(BaseModel):\n    name: str\n    movement: Movement",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleUsage",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class MuscleUsage(BaseModel):\n    muscle: Muscle\n    amount: float\n    quality: MuscleQuality\nclass Exercise(BaseModel):\n    name: str\n    movement: Movement\n    muscles: List[MuscleUsage]\nclass WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Exercise",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class Exercise(BaseModel):\n    name: str\n    movement: Movement\n    muscles: List[MuscleUsage]\nclass WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    weight: float  # kg\n    reps: int",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    weight: float  # kg\n    reps: int\n    @property\n    def workload(self) -> float:\n        \"\"\"Simple tonnage metric (kg‑reps).\"\"\"\n        return self.weight * self.reps",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "CardioSession",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class CardioSession(BaseModel):\n    type: Literal[\"cardio\"] = \"cardio\"\n    exercise_name: str\n    pattern: Movement = Movement.CARDIO\n    duration: float          # minutes\n    heart_rate: int          # avg bpm\n    @property\n    def workload(self) -> float:\n        \"\"\"\n        Banister TRIMP (very rough):",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_workload",
+        "kind": 2,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "def aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:\n        tally[w.pattern] += w.workload\n    return dict(tally)\nif __name__ == \"__main__\":",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "kind": 5,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "WorkDone = Union[WeightedSet, CardioSession]\nfrom collections import defaultdict\nfrom typing import Iterable, Dict\ndef aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "drive",
+        "description": "drive",
+        "peekOfCode": "def main():\n  \"\"\"Shows basic usage of the Drive v3 API.\n  Prints the names and ids of the first 10 files the user has access to.\n  \"\"\"\n  creds = None\n  # The file token.json stores the user's access and refresh tokens, and is\n  # created automatically when the authorization flow completes for the first\n  # time.\n  if os.path.exists(\"token.json\"):\n    creds = Credentials.from_authorized_user_file(\"token.json\", SCOPES)",
+        "detail": "drive",
+        "documentation": {}
+    },
+    {
+        "label": "SCOPES",
+        "kind": 5,
+        "importPath": "drive",
+        "description": "drive",
+        "peekOfCode": "SCOPES = [\"https://www.googleapis.com/auth/drive.metadata.readonly\"]\ndef main():\n  \"\"\"Shows basic usage of the Drive v3 API.\n  Prints the names and ids of the first 10 files the user has access to.\n  \"\"\"\n  creds = None\n  # The file token.json stores the user's access and refresh tokens, and is\n  # created automatically when the authorization flow completes for the first\n  # time.\n  if os.path.exists(\"token.json\"):",
+        "detail": "drive",
+        "documentation": {}
+    },
+    {
+        "label": "setup_local_folder",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def setup_local_folder(folder_name):\n    \"\"\"Create or clear the local folder\"\"\"\n    if os.path.exists(folder_name):\n        # Remove existing folder and its contents\n        shutil.rmtree(folder_name)\n    # Create fresh folder\n    os.makedirs(folder_name)\n    print(f\"Local folder '{folder_name}' prepared.\")\ndef find_folder_id(service, folder_name):\n    \"\"\"Find the folder ID for the specified folder name\"\"\"",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "find_folder_id",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def find_folder_id(service, folder_name):\n    \"\"\"Find the folder ID for the specified folder name\"\"\"\n    query = f\"name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'\"\n    results = service.files().list(q=query, spaces='drive').execute()\n    items = results.get('files', [])\n    if not items:\n        print(f\"No folder named '{folder_name}' found in Google Drive.\")\n        return None\n    return items[0]['id']\ndef download_folder_contents(service, folder_id, local_folder):",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "download_folder_contents",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def download_folder_contents(service, folder_id, local_folder):\n    \"\"\"Download all files from the specified folder to local folder\"\"\"\n    # Query for files in the specified folder\n    query = f\"'{folder_id}' in parents\"\n    results = service.files().list(q=query).execute()\n    items = results.get('files', [])\n    if not items:\n        print(f\"No files found in the folder.\")\n        return\n    # Define mime type mappings for exports",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def main():\n    \"\"\"Downloads all files from '_Workouts' folder in Google Drive to a local folder.\"\"\"\n    FOLDER_NAME = \"_Workouts\"\n    # Remove existing token to force re-authorization\n    if os.path.exists(\"token.json\"):\n        print(\"Removing old token to ensure proper permissions...\")\n        os.remove(\"token.json\")\n    creds = None\n    if os.path.exists(\"token.json\"):\n        creds = Credentials.from_authorized_user_file(\"token.json\", SCOPES)",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "SCOPES",
+        "kind": 5,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "SCOPES = [\n    \"https://www.googleapis.com/auth/drive\",\n    \"https://www.googleapis.com/auth/drive.readonly\",\n    \"https://www.googleapis.com/auth/drive.file\"\n]\ndef setup_local_folder(folder_name):\n    \"\"\"Create or clear the local folder\"\"\"\n    if os.path.exists(folder_name):\n        # Remove existing folder and its contents\n        shutil.rmtree(folder_name)",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "Workout",
+        "kind": 6,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "class Workout(BaseModel):\n    date: dt.date\n    work_done: List[WorkDone]\ndef df_to_workout(df: pd.DataFrame) -> Workout:\n  for _, row in df.iterrows():\n        # Skip rows without an exercise name (empty string or NaN)\n        if pd.isna(row.get('exercise')) or row.get('exercise') == '':\n            continue\ndef load_workout_data(directory=\"_Workouts\"):\n    \"\"\"",
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "df_to_workout",
+        "kind": 2,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "def df_to_workout(df: pd.DataFrame) -> Workout:\n  for _, row in df.iterrows():\n        # Skip rows without an exercise name (empty string or NaN)\n        if pd.isna(row.get('exercise')) or row.get('exercise') == '':\n            continue\ndef load_workout_data(directory=\"_Workouts\"):\n    \"\"\"\n    Load all CSV files from the specified directory into pandas DataFrames\n    Args:\n        directory (str): Path to the directory containing workout files",
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "load_workout_data",
+        "kind": 2,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "def load_workout_data(directory=\"_Workouts\"):\n    \"\"\"\n    Load all CSV files from the specified directory into pandas DataFrames\n    Args:\n        directory (str): Path to the directory containing workout files\n    Returns:\n        dict: Dictionary mapping filenames to pandas DataFrames\n    \"\"\"\n    workout_data = {}\n    # Check if directory exists",
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "workouts",
+        "kind": 5,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "workouts = load_workout_data()\n# Example: Access a specific workout by name\n# If you have a file \"_Workouts/Running_Log.csv\", access it with:\n# running_df = workouts[\"Running_Log\"] \n# Example: Process all workouts\nfor name, df in workouts.items():\n    print(f\"\\nWorkout: {name}\")\n    print(f\"Shape: {df.shape}\")\n    print(f\"Columns: {', '.join(df.columns)}\")",
+        "detail": "workout",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,71 @@
+- name: Kettlebell Curl and Press
+  movement: functional 
+  muscles:
+    # Press component (primary)
+    - muscle: front_shoulder
+      amount: 0.9
+      quality: strength
+    - muscle: triceps
+      amount: 0.8
+      quality: strength
+    - muscle: medial_delts
+      amount: 0.7
+      quality: strength
+    
+    # Curl component
+    - muscle: biceps
+      amount: 0.8
+      quality: strength
+    - muscle: forearms
+      amount: 0.6
+      quality: strength
+    
+    # Stabilization
+    - muscle: abs
+      amount: 0.5
+      quality: strength
+    - muscle: lowerback
+      amount: 0.5
+      quality: strength
+    - muscle: traps
+      amount: 0.5
+      quality: strength
+    - muscle: upper_back
+      amount: 0.4
+      quality: strength
+    - muscle: chest
+      amount: 0.3
+      quality: strength
+- name: Tyson Push-up
+  movement: functional
+  muscles:
+    - muscle: chest
+      amount: 0.9
+      quality: strength
+    - muscle: triceps
+      amount: 0.8
+      quality: strength
+    - muscle: front_shoulder
+      amount: 0.8
+      quality: strength
+    - muscle: abs
+      amount: 0.8
+      quality: strength
+    - muscle: quads
+      amount: 0.7
+      quality: strength
+    - muscle: glutes
+      amount: 0.6
+      quality: strength
+    - muscle: medial_delts
+      amount: 0.5
+      quality: strength
+    - muscle: obliques
+      amount: 0.5
+      quality: strength
+    - muscle: lowerback
+      amount: 0.5
+      quality: strength
+    - muscle: calfs
+      amount: 0.4
+      quality: strength

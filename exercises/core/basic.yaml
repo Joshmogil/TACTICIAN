@@ -1,0 +1,85 @@
+# Core exercises
+- name: Toes to Bar
+  movement: core
+  muscles:
+    - muscle: abs
+      amount: 0.9
+      quality: strength
+    - muscle: hip_flexors
+      amount: 0.8
+      quality: strength
+    - muscle: lats
+      amount: 0.6
+      quality: strength
+    - muscle: forearms
+      amount: 0.7
+      quality: strength
+    - muscle: lowerback
+      amount: 0.5
+      quality: strength
+    - muscle: obliques
+      amount: 0.7
+      quality: strength
+
+- name: Windshield Wipers
+  movement: core
+  muscles:
+    - muscle: obliques
+      amount: 0.9
+      quality: strength
+    - muscle: abs
+      amount: 0.8
+      quality: strength
+    - muscle: hip_flexors
+      amount: 0.7
+      quality: strength
+    - muscle: lats
+      amount: 0.5
+      quality: strength
+    - muscle: lowerback
+      amount: 0.5
+      quality: strength
+    - muscle: forearms
+      amount: 0.6
+      quality: strength
+
+- name: Crunch
+  movement: core
+  muscles:
+    - muscle: abs
+      amount: 0.9
+      quality: strength
+    - muscle: obliques
+      amount: 0.4
+      quality: strength
+    - muscle: hip_flexors
+      amount: 0.5
+      quality: strength
+    - muscle: lowerback
+      amount: 0.3
+      quality: strength
+
+- name: Shifting Sail Plank
+  movement: core
+  muscles:
+    - muscle: abs
+      amount: 0.8
+      quality: strength
+    - muscle: obliques
+      amount: 0.8
+      quality: strength
+    - muscle: lowerback
+      amount: 0.6
+      quality: strength
+    - muscle: front_shoulder
+      amount: 0.7
+      quality: strength
+    - muscle: medial_delts
+      amount: 0.6
+      quality: strength
+    - muscle: triceps
+      amount: 0.5
+      quality: strength
+    - muscle: upper_back
+      amount: 0.5
+      quality: strength

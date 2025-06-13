@@ -1,0 +1,72 @@
+# Plyometric exercises
+- name: Vertical Hops
+  movement: lower_plyo
+  muscles:
+    - muscle: calfs
+      amount: 0.9
+      quality: strength
+    - muscle: quads
+      amount: 0.7
+      quality: strength
+    - muscle: hamstrings
+      amount: 0.6
+      quality: strength
+    - muscle: glutes
+      amount: 0.6
+      quality: strength
+    - muscle: abs
+      amount: 0.4
+      quality: strength
+    - muscle: lowerback
+      amount: 0.3
+      quality: strength
+
+- name: Broad Jump
+  movement: lower_plyo
+  muscles:
+    - muscle: quads
+      amount: 0.9
+      quality: strength
+    - muscle: glutes
+      amount: 0.9
+      quality: strength
+    - muscle: hamstrings
+      amount: 0.8
+      quality: strength
+    - muscle: calfs
+      amount: 0.7
+      quality: strength
+    - muscle: abs
+      amount: 0.5
+      quality: strength
+    - muscle: lowerback
+      amount: 0.5
+      quality: strength
+    - muscle: front_shoulder
+      amount: 0.3
+      quality: strength
+
+- name: Box Jump
+  movement: lower_plyo
+  muscles:
+    - muscle: quads
+      amount: 0.9
+      quality: strength
+    - muscle: glutes
+      amount: 0.9
+      quality: strength
+    - muscle: hamstrings
+      amount: 0.8
+      quality: strength
+    - muscle: calfs
+      amount: 0.8
+      quality: strength
+    - muscle: abs
+      amount: 0.6
+      quality: strength
+    - muscle: lowerback
+      amount: 0.5
+      quality: strength
+    - muscle: front_shoulder
+      amount: 0.3
+      quality: strength

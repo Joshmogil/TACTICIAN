@@ -1,0 +1,7 @@
+**/__pycache__
+**/.env
+**/.venv
+**/junk/
+**/token.json
+**/*credentials.json
+__pycache__
