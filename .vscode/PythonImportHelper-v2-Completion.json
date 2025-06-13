@@ -412,6 +412,15 @@
         "documentation": {}
     },
     {
+        "label": "PercievedExertion",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class PercievedExertion(str, Enum):\n    LOW = 1\n    MEDIUM = 2\n    HIGH = 3\n    MAX = 4\nclass MuscleQuality(str, Enum):\n    ENERGY = \"energy\"\n    STRENGTH = \"strength\"\nclass MuscleUsage(BaseModel):\n    muscle: Muscle",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
         "label": "MuscleQuality",
         "kind": 6,
         "importPath": "core",
@@ -434,7 +443,7 @@
         "kind": 6,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "class Exercise(BaseModel):\n    name: str\n    movement: Movement\n    muscles: List[MuscleUsage]\nclass WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    weight: float  # kg\n    reps: int",
+        "peekOfCode": "class Exercise(BaseModel):\n    name: str\n    movement: Movement\n    muscles: List[MuscleUsage]\nclass WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    ex_weight: float  # kg\n    ac_weight: float",
         "detail": "core",
         "documentation": {}
     },
@@ -443,7 +452,7 @@
         "kind": 6,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "class WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    weight: float  # kg\n    reps: int\n    @property\n    def workload(self) -> float:\n        \"\"\"Simple tonnage metric (kg‑reps).\"\"\"\n        return self.weight * self.reps",
+        "peekOfCode": "class WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    ex_weight: float  # kg\n    ac_weight: float\n    ex_reps: int\n    ac_reps: int\n    pe: PercievedExertion\n    @property",
         "detail": "core",
         "documentation": {}
     },
@@ -452,7 +461,7 @@
         "kind": 6,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "class CardioSession(BaseModel):\n    type: Literal[\"cardio\"] = \"cardio\"\n    exercise_name: str\n    pattern: Movement = Movement.CARDIO\n    duration: float          # minutes\n    heart_rate: int          # avg bpm\n    @property\n    def workload(self) -> float:\n        \"\"\"\n        Banister TRIMP (very rough):",
+        "peekOfCode": "class CardioSession(BaseModel):\n    type: Literal[\"cardio\"] = \"cardio\"\n    exercise_name: str\n    pattern: Movement = Movement.CARDIO\n    ex_duration: float          # minutes\n    ac_duration: float\n    ex_heart_rate: int          # avg bpm\n    ac_heart_rate: int\n    pe: PercievedExertion\n    @property",
         "detail": "core",
         "documentation": {}
     },

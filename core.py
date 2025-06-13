@@ -33,6 +33,12 @@ class Muscle(str, Enum):
     HAMSTRINGS = "hamstrings"
     CALFS = "calfs"
 
+class PercievedExertion(str, Enum):
+    LOW = 1
+    MEDIUM = 2
+    HIGH = 3
+    MAX = 4
+
 class MuscleQuality(str, Enum):
     ENERGY = "energy"
     STRENGTH = "strength"
@@ -54,8 +60,12 @@ class WeightedSet(BaseModel):
     type: Literal["weighted"] = "weighted"
     exercise_name: str
     pattern: Movement
-    weight: float  # kg
-    reps: int
+    ex_weight: float  # kg
+    ac_weight: float
+    ex_reps: int
+    ac_reps: int
+
+    pe: PercievedExertion
 
     @property
     def workload(self) -> float:
@@ -67,9 +77,13 @@ class CardioSession(BaseModel):
     type: Literal["cardio"] = "cardio"
     exercise_name: str
     pattern: Movement = Movement.CARDIO
-    duration: float          # minutes
-    heart_rate: int          # avg bpm
+    ex_duration: float          # minutes
+    ac_duration: float
+    ex_heart_rate: int          # avg bpm
+    ac_heart_rate: int
 
+    pe: PercievedExertion
+    
     @property
     def workload(self) -> float:
         """
