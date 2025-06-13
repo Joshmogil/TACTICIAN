@@ -36,8 +36,10 @@ def test_recommendation_ranks_by_intensity():
     bench = next(r for r in recs if r["name"] == "Dumbbell Bench")
     assert row["weight"] == 20
     assert row["reps"] == 5
+    assert isinstance(row.get("sets"), int) and row["sets"] >= 1
     assert bench["weight"] == 20
     assert bench["reps"] == 5
+    assert isinstance(bench.get("sets"), int) and bench["sets"] >= 1
     assert "reason" in row and isinstance(row["reason"], str)
     assert "reason" in bench and isinstance(bench["reason"], str)
 
@@ -60,6 +62,8 @@ def test_recommendation_filters_fatigued_muscles():
     if isinstance(recs, list):
         for item in recs:
             assert "reason" in item and isinstance(item["reason"], str)
+            if item.get("sets") is not None:
+                assert isinstance(item["sets"], int)
 
 
 def test_recommendation_ranks_cardio_history():
@@ -81,5 +85,6 @@ def test_recommendation_ranks_cardio_history():
     run_rec = next(r for r in recs if r["name"] == "Run")
     assert run_rec["duration"] == 30
     assert run_rec["heart_rate"] == 170
+    assert "sets" not in run_rec
     for item in recs:
         assert "reason" in item and isinstance(item["reason"], str)

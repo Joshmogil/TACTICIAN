@@ -23,5 +23,8 @@ class WorkoutRecord(BaseModel):
 
 
 # resolve forward reference in User once WorkoutRecord is defined
-User.model_rebuild()
+try:
+    User.model_rebuild()
+except AttributeError:
+    User.update_forward_refs(WorkoutRecord=WorkoutRecord)
 

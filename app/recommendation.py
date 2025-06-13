@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from datetime import datetime, timedelta
+from math import ceil
 from typing import DefaultDict, Dict, List, Union
 
 from app.models import User
@@ -14,6 +15,7 @@ from core import (
     MuscleUsage,
     PercievedExertion,
     WeightedSet,
+    WorkDone,
 )
 from load_exercises import load_exercises
 
@@ -25,37 +27,58 @@ DEFAULT_WEIGHT = 20.0
 DEFAULT_REPS = 10
 DEFAULT_DURATION = 20
 DEFAULT_HR = 120
+DEFAULT_SETS = 3
+
+# Desired fatigue level after completing a session for each movement pattern
+TARGET_FATIGUE: Dict[Movement, float] = {
+    Movement.UPPER_PUSH: 100.0,
+    Movement.UPPER_PULL: 100.0,
+    Movement.LOWER_PUSH: 100.0,
+    Movement.LOWER_PULL: 100.0,
+    Movement.CORE: 80.0,
+    Movement.FUNCTIONAL: 80.0,
+    Movement.LOWER_PLYO: 80.0,
+    Movement.UPPER_PLYO: 80.0,
+    Movement.CARDIO: 80.0,
+}
 
 
 def _build_plan(user: User, name: str, *, window: int = 3) -> Dict[str, object]:
-    """Return a plan for the exercise using recent history."""
+    """Return a plan for the exercise using recent history.
+
+    ``window`` defines how many past sessions to inspect when building the
+    recommendation. The resulting plan includes an estimated number of sets for
+    weighted movements based on those sessions.
+    """
 
     weights: List[float] = []
     reps: List[int] = []
+    workloads: List[float] = []
+    set_counts: List[int] = []
     durations: List[float] = []
     heart_rates: List[int] = []
 
-    # gather most recent occurrences of the exercise
-    recent: List[WorkDone] = []
+    # gather most recent sessions containing the exercise
     for rec in sorted(user.workouts, key=lambda r: r.date, reverse=True):
-        for item in rec.work_done:
-            if item.exercise_name == name:
-                recent.append(item)
-                if len(recent) >= window:
-                    break
-        if len(recent) >= window:
+        session_items: List[WorkDone] = [
+            item for item in rec.work_done if item.exercise_name == name
+        ]
+        if not session_items:
+            continue
+        set_counts.append(len(session_items))
+        for item in session_items:
+            if isinstance(item, WeightedSet):
+                weight = item.ac_weight if item.ac_weight else item.ex_weight
+                reps.append(item.ac_reps if item.ac_reps else item.ex_reps)
+                weights.append(weight)
+                workloads.append(item.workload)
+            elif isinstance(item, CardioSession):
+                duration = item.ac_duration if item.ac_duration else item.ex_duration
+                hr = item.ac_heart_rate if item.ac_heart_rate else item.ex_heart_rate
+                durations.append(duration)
+                heart_rates.append(hr)
+        if len(set_counts) >= window:
             break
-
-    for item in recent:
-        if isinstance(item, WeightedSet):
-            weight = item.ac_weight if item.ac_weight else item.ex_weight
-            reps.append(item.ac_reps if item.ac_reps else item.ex_reps)
-            weights.append(weight)
-        elif isinstance(item, CardioSession):
-            duration = item.ac_duration if item.ac_duration else item.ex_duration
-            hr = item.ac_heart_rate if item.ac_heart_rate else item.ex_heart_rate
-            durations.append(duration)
-            heart_rates.append(hr)
 
     info = EXERCISES.get(name)
     movement = info.get("movement") if info else ""
@@ -63,11 +86,25 @@ def _build_plan(user: User, name: str, *, window: int = 3) -> Dict[str, object]:
     if movement == Movement.CARDIO.value:
         dur = sum(durations) / len(durations) if durations else DEFAULT_DURATION
         hr = sum(heart_rates) / len(heart_rates) if heart_rates else DEFAULT_HR
-        return {"name": name, "duration": int(round(dur)), "heart_rate": int(round(hr))}
+        avg_work = sum(workloads) / len(workloads) if workloads else dur
+        return {
+            "name": name,
+            "duration": int(round(dur)),
+            "heart_rate": int(round(hr)),
+            "avg_work": avg_work,
+        }
 
     wt = sum(weights) / len(weights) if weights else DEFAULT_WEIGHT
     rp = sum(reps) / len(reps) if reps else DEFAULT_REPS
-    return {"name": name, "weight": round(wt, 1), "reps": int(round(rp))}
+    sets = int(round(sum(set_counts) / len(set_counts))) if set_counts else DEFAULT_SETS
+    avg_work = sum(workloads) / len(workloads) if workloads else wt * rp
+    return {
+        "name": name,
+        "weight": round(wt, 1),
+        "reps": int(round(rp)),
+        "sets": sets,
+        "avg_work": avg_work,
+    }
 
 
 def recommend_workout(
@@ -109,16 +146,18 @@ def recommend_workout(
     history: DefaultDict[str, Dict[str, float]] = defaultdict(
         lambda: {
             "workload": 0.0,
-            "count": 0,
+            "count": 0,  # total sets logged
             "weight_total": 0.0,
             "reps_total": 0.0,
             "duration_total": 0.0,
             "hr_total": 0.0,
+            "sessions": 0,  # number of sessions containing the exercise
         }
     )
     for record in user.workouts:
         if record.date < cutoff:
             continue
+        session_counter: DefaultDict[str, int] = defaultdict(int)
         for item in record.work_done:
             if isinstance(item, WeightedSet):
                 stats = history[item.exercise_name]
@@ -128,6 +167,7 @@ def recommend_workout(
                 reps = item.ac_reps if item.ac_reps else item.ex_reps
                 stats["weight_total"] += weight
                 stats["reps_total"] += reps
+                session_counter[item.exercise_name] += 1
             elif isinstance(item, CardioSession):
                 stats = history[item.exercise_name]
                 stats["workload"] += item.workload
@@ -142,6 +182,9 @@ def recommend_workout(
                 )
                 stats["duration_total"] += duration
                 stats["hr_total"] += hr
+                session_counter[item.exercise_name] += 1
+        for ex_name, _sets in session_counter.items():
+            history[ex_name]["sessions"] += 1
 
     # score candidate exercises
     scored: List[tuple[float, Dict[str, Union[str, float, int]]]] = []
@@ -194,6 +237,7 @@ def recommend_workout(
             intensity_factor = 1.0
 
         plan = _build_plan(user, ex["name"])
+        avg_work = plan.get("avg_work", 0.0)
         if stats and stats["count"]:
             if movement == Movement.CARDIO:
                 plan["duration"] = int(round(stats["duration_total"] / stats["count"]))
@@ -201,35 +245,52 @@ def recommend_workout(
             else:
                 plan["weight"] = round(stats["weight_total"] / stats["count"], 1)
                 plan["reps"] = int(round(stats["reps_total"] / stats["count"]))
+                if stats["sessions"]:
+                    plan["sets"] = int(round(stats["count"] / stats["sessions"]))
+                    avg_work = stats["workload"] / stats["count"]
 
+        # adjust suggested volume to move toward target fatigue
+        target = TARGET_FATIGUE.get(movement, fatigue_threshold)
+        current = user.recovery.scores.get(movement, 0.0)
+        needed = max(target - current, 0.0)
+        if needed and avg_work:
+            if movement == Movement.CARDIO:
+                factor = needed / avg_work
+                plan["duration"] = max(5, int(round(plan["duration"] * factor)))
+            else:
+                sets_needed = ceil(needed / avg_work)
+                plan["sets"] = max(1, min(sets_needed, 5))
+        
         fatigue = user.recovery.scores.get(movement, 0.0)
-        if stats and stats["count"]:
-            sessions = stats["count"]
+        target = TARGET_FATIGUE.get(movement, fatigue_threshold)
+        if stats and stats["sessions"]:
+            sessions = stats["sessions"]
             if movement == Movement.CARDIO:
                 plan["reason"] = (
                     f"This cardio exercise was selected because your {movement.value.replace('_', ' ')} pattern "
-                    f"is relatively recovered (fatigue {fatigue:.1f}). Duration {plan['duration']} min at "
-                    f"{plan['heart_rate']} bpm reflects the average of your last {sessions} session(s)."
+                    f"is relatively recovered (fatigue {fatigue:.1f}). Target fatigue is {target:.0f}. "
+                    f"Duration {plan['duration']} min at {plan['heart_rate']} bpm reflects the average of your last {sessions} session(s)."
                 )
             else:
                 plan["reason"] = (
                     f"Your {movement.value.replace('_', ' ')} pattern is relatively recovered (fatigue {fatigue:.1f}). "
-                    f"Suggested {plan['reps']} reps at {plan['weight']} weight is based on the average of your "
-                    f"last {sessions} session(s)."
+                    f"Target fatigue is {target:.0f}. Suggested {plan['sets']}x{plan['reps']} at {plan['weight']} weight "
+                    f"is based on the average of your last {sessions} session(s)."
                 )
         else:
             if movement == Movement.CARDIO:
                 plan["reason"] = (
                     f"This cardio exercise was selected because your {movement.value.replace('_', ' ')} pattern "
-                    f"is relatively recovered (fatigue {fatigue:.1f}). No recent history found so default "
-                    f"duration {plan['duration']} min and heart rate {plan['heart_rate']} bpm are suggested."
+                    f"is relatively recovered (fatigue {fatigue:.1f}). Target fatigue is {target:.0f}. "
+                    f"No recent history found so default duration {plan['duration']} min and heart rate {plan['heart_rate']} bpm are suggested."
                 )
             else:
                 plan["reason"] = (
                     f"Your {movement.value.replace('_', ' ')} pattern is relatively recovered (fatigue {fatigue:.1f}). "
-                    f"No recent history found so default {plan['weight']} weight for {plan['reps']} reps is suggested."
+                    f"Target fatigue is {target:.0f}. No recent history found so default {plan['sets']}x{plan['reps']} at {plan['weight']} weight is suggested."
                 )
 
+        plan.pop("avg_work", None)
         score = base * muscle_factor * quality_factor * intensity_factor
         scored.append((score, plan))
 
