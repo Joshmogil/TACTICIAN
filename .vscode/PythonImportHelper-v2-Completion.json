@@ -52,12 +52,188 @@
         "documentation": {}
     },
     {
-        "label": "cardio",
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "cardio",
-        "description": "cardio",
-        "detail": "cardio",
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Mapping",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -66,6 +242,38 @@
         "isExtraImport": true,
         "importPath": "core",
         "description": "core",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_workload",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
         "detail": "core",
         "documentation": {}
     },
@@ -107,6 +315,31 @@
         "description": "core",
         "isExtraImport": true,
         "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_workload",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "cardio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cardio",
+        "description": "cardio",
+        "detail": "cardio",
         "documentation": {}
     },
     {
@@ -162,75 +395,11 @@
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Literal",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Iterable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
+        "detail": "collections",
         "documentation": {}
     },
     {
@@ -407,15 +576,6 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -440,6 +600,42 @@
         "description": ".venv.bin.jp",
         "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
         "detail": ".venv.bin.jp",
+        "documentation": {}
+    },
+    {
+        "label": "RecoveryState",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class RecoveryState(BaseModel):\n    \"\"\"Stores fatigue levels for each movement pattern.\"\"\"\n    scores: Dict[Movement, float] = {}\n    last_update: Optional[datetime] = None\n    def decay(self, now: datetime, half_life_hours: float = 48) -> None:\n        \"\"\"Apply exponential decay to all scores based on time since last update.\"\"\"\n        if self.last_update is None:\n            self.last_update = now\n            return\n        hours = (now - self.last_update).total_seconds() / 3600",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class User(BaseModel):\n    id: str\n    name: str\n    recovery: RecoveryState = RecoveryState()\n    workouts: List['WorkoutRecord'] = []",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "WorkoutRecord",
+        "kind": 6,
+        "importPath": "app.recovery",
+        "description": "app.recovery",
+        "peekOfCode": "class WorkoutRecord(BaseModel):\n    date: datetime\n    work_done: List[WorkDone]",
+        "detail": "app.recovery",
+        "documentation": {}
+    },
+    {
+        "label": "update_recovery",
+        "kind": 2,
+        "importPath": "app.recovery",
+        "description": "app.recovery",
+        "peekOfCode": "def update_recovery(user: User, work: List[WorkDone], *, timestamp: datetime | None = None) -> None:\n    \"\"\"Update a user's recovery state with the completed work.\"\"\"\n    now = timestamp or datetime.utcnow()\n    user.recovery.apply_workout(work, now)\n    user.workouts.append(\n        WorkoutRecord(date=now, work_done=work)\n    )\nclass WorkoutRecord(BaseModel):\n    date: datetime\n    work_done: List[WorkDone]",
+        "detail": "app.recovery",
         "documentation": {}
     },
     {
@@ -519,7 +715,16 @@
         "kind": 2,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "def aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:\n        tally[w.pattern] += w.workload\n    return dict(tally)\nif __name__ == \"__main__\":",
+        "peekOfCode": "def aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:\n        tally[w.pattern] += w.workload\n    return dict(tally)\ndef aggregate_muscle_workload(",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_muscle_workload",
+        "kind": 2,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "def aggregate_muscle_workload(\n    work: Iterable[WorkDone], exercises: Mapping[str, Exercise]\n) -> Dict[Muscle, float]:\n    \"\"\"Sum workload for each muscle involved in the supplied work.\"\"\"\n    tally: Dict[Muscle, float] = defaultdict(float)\n    for w in work:\n        if isinstance(w, WeightedSet):\n            ex = exercises.get(w.exercise_name)\n            if not ex:\n                continue",
         "detail": "core",
         "documentation": {}
     },
@@ -528,7 +733,7 @@
         "kind": 5,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "WorkDone = Union[WeightedSet, CardioSession]\nfrom collections import defaultdict\nfrom typing import Dict, Iterable\ndef aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:",
+        "peekOfCode": "WorkDone = Union[WeightedSet, CardioSession]\nfrom collections import defaultdict\nfrom typing import Dict, Iterable, Mapping\ndef aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:",
         "detail": "core",
         "documentation": {}
     },
@@ -609,7 +814,7 @@
         "kind": 6,
         "importPath": "workout",
         "description": "workout",
-        "peekOfCode": "class Workout(BaseModel):\n    date: dt.date\n    work_done: List[WorkDone]\ndef _parse_date(date_str):\n    \"\"\"Convert date string like '6-9-2025' to datetime.date object\"\"\"\n    try:\n        # Parse the date string with month-day-year format\n        return datetime.datetime.strptime(date_str, \"%m-%d-%Y\").date()\n    except ValueError:\n        print(f\"Error parsing date: {date_str}\")",
+        "peekOfCode": "class Workout(BaseModel):\n    date: dt.date\n    user_id: str = \"default\"\n    work_done: List[WorkDone]\n    @property\n    def totals(self) -> Dict[Movement, float]:\n        return aggregate_workload(self.work_done)\nWORKOUT_HISTORY: Dict[str, List[Workout]] = defaultdict(list)\ndef _parse_date(date_str):\n    \"\"\"Convert date string like '6-9-2025' to datetime.date object\"\"\"",
         "detail": "workout",
         "documentation": {}
     },
@@ -618,7 +823,7 @@
         "kind": 2,
         "importPath": "workout",
         "description": "workout",
-        "peekOfCode": "def df_to_workout(date: datetime.date, df: pd.DataFrame) -> Workout:\n    \"\"\"Convert a raw workout CSV ``DataFrame`` into a ``Workout`` model.\"\"\"\n    exercises = load_exercises()\n    lookup = {_canon(k): k for k in exercises}\n    # manual typo corrections\n    lookup[\"windshieldwhipers\"] = \"Windshield Wipers\"\n    work_items: List[WorkDone] = []\n    current_ex = None\n    for _, row in df.iterrows():\n        raw_name = row.get(\"exercise\")",
+        "peekOfCode": "def df_to_workout(date: datetime.date, df: pd.DataFrame, user_id: str = \"default\") -> Workout:\n    exercises = load_exercises()\n    lookup = {_canon(k): k for k in exercises}\n    lookup[\"windshieldwhipers\"] = \"Windshield Wipers\"\n    work_items: List[WorkDone] = []\n    current_ex = None\n    for _, row in df.iterrows():\n        raw_name = row.get(\"exercise\")\n        if isinstance(raw_name, str) and raw_name.strip():\n            current_ex = raw_name.strip()",
         "detail": "workout",
         "documentation": {}
     },
@@ -627,7 +832,7 @@
         "kind": 2,
         "importPath": "workout",
         "description": "workout",
-        "peekOfCode": "def load_workout_data(directory=\"_Workouts\"):\n    \"\"\"\n    Load all CSV files from the specified directory into pandas DataFrames\n    Args:\n        directory (str): Path to the directory containing workout files\n    Returns:\n        dict: Dictionary mapping filenames to pandas DataFrames\n    \"\"\"\n    workout_data = {}\n    # Check if directory exists",
+        "peekOfCode": "def load_workout_data(directory=\"_Workouts\", user_id: str = \"default\"):\n    workout_data = {}\n    if not os.path.exists(directory):\n        print(f\"Directory '{directory}' not found.\")\n        return workout_data\n    files = os.listdir(directory)\n    csv_files = [f for f in files if f.endswith(\".csv\")]\n    if not csv_files:\n        print(f\"No CSV files found in '{directory}'.\")\n        return workout_data",
         "detail": "workout",
         "documentation": {}
     },
@@ -636,7 +841,7 @@
         "kind": 5,
         "importPath": "workout",
         "description": "workout",
-        "peekOfCode": "workouts = load_workout_data()\n# Example: Access a specific workout by name\n# If you have a file \"_Workouts/Running_Log.csv\", access it with:\n# running_df = workouts[\"Running_Log\"]\n# Example: Process all workouts\nfor name, item in workouts.items():\n    print(f\"\\nWorkout: {name}\")\n    print(item)",
+        "peekOfCode": "workouts = load_workout_data()\nif __name__ == \"__main__\":\n    for name, item in workouts.items():\n        print(f\"\\nWorkout: {name}\")\n        print(item)",
         "detail": "workout",
         "documentation": {}
     }
