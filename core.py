@@ -35,6 +35,7 @@ class Muscle(str, Enum):
     QUADS = "quads"
     HAMSTRINGS = "hamstrings"
     CALFS = "calfs"
+    CARDIO = "cardio"
 
 
 class PercievedExertion(str, Enum):
@@ -114,7 +115,7 @@ WorkDone = Union[WeightedSet, CardioSession]
 
 
 from collections import defaultdict
-from typing import Dict, Iterable
+from typing import Dict, Iterable, Mapping
 
 
 def aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:
@@ -125,6 +126,24 @@ def aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:
     tally: Dict[Movement, float] = defaultdict(float)
     for w in work:
         tally[w.pattern] += w.workload
+    return dict(tally)
+
+
+def aggregate_muscle_workload(
+    work: Iterable[WorkDone], exercises: Mapping[str, Exercise]
+) -> Dict[Muscle, float]:
+    """Sum workload for each muscle involved in the supplied work."""
+    tally: Dict[Muscle, float] = defaultdict(float)
+    for w in work:
+        if isinstance(w, WeightedSet):
+            ex = exercises.get(w.exercise_name)
+            if not ex:
+                continue
+            for usage in ex.muscles:
+                tally[usage.muscle] += w.workload * usage.amount
+        elif isinstance(w, CardioSession):
+            if hasattr(Muscle, "CARDIO"):
+                tally[Muscle.CARDIO] += w.workload
     return dict(tally)
 
 
@@ -147,7 +166,31 @@ if __name__ == "__main__":
         pe=PercievedExertion.HIGH,
     )
 
+    bench_info = Exercise(
+        name="Bench Press",
+        movement=Movement.UPPER_PUSH,
+        muscles=[
+            MuscleUsage(muscle=Muscle.CHEST, amount=0.8, quality=MuscleQuality.STRENGTH),
+            MuscleUsage(muscle=Muscle.TRICEPS, amount=0.6, quality=MuscleQuality.STRENGTH),
+            MuscleUsage(muscle=Muscle.FRONT_DELTS, amount=0.5, quality=MuscleQuality.STRENGTH),
+        ],
+    )
+
+    run_info = Exercise(
+        name="Run",
+        movement=Movement.CARDIO,
+        muscles=[
+            MuscleUsage(muscle=Muscle.QUADS, amount=0.9, quality=MuscleQuality.ENERGY),
+            MuscleUsage(muscle=Muscle.CALFS, amount=0.9, quality=MuscleQuality.ENERGY),
+        ],
+    )
+
+    exercises = {bench_info.name: bench_info, run_info.name: run_info}
+
     today: List[WorkDone] = [bench, run]
     summary = aggregate_workload(today)
     print(summary)
+    muscle_summary = aggregate_muscle_workload(today, exercises)
+    print(muscle_summary)
     # → {Movement.UPPER_PUSH: 375.0, Movement.CARDIO: 91.38}
+    # → {Muscle.CHEST: 300.0, Muscle.TRICEPS: 225.0, Muscle.FRONT_DELTS: 187.5, Muscle.CARDIO: 91.38}
