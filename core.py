@@ -10,6 +10,9 @@ class Movement(str, Enum):
     LOWER_PULL = "lower_pull"
     CORE = "core"
     CARDIO = "cardio"
+    FUNCTIONAL = "functional"
+    LOWER_PLYO = "lower_plyo"
+    UPPER_PLYO = "upper_plyo"
 
 class Muscle(str, Enum):
     LATS = "lats"

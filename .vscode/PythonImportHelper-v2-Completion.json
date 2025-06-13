@@ -398,7 +398,7 @@
         "kind": 6,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "class Movement(str, Enum):\n    UPPER_PUSH = \"upper_push\"\n    UPPER_PULL = \"upper_pull\"\n    LOWER_PUSH = \"lower_push\"\n    LOWER_PULL = \"lower_pull\"\n    CORE = \"core\"\n    CARDIO = \"cardio\"\nclass Muscle(str, Enum):\n    LATS = \"lats\"\n    CHEST = \"chest\"",
+        "peekOfCode": "class Movement(str, Enum):\n    UPPER_PUSH = \"upper_push\"\n    UPPER_PULL = \"upper_pull\"\n    LOWER_PUSH = \"lower_push\"\n    LOWER_PULL = \"lower_pull\"\n    CORE = \"core\"\n    CARDIO = \"cardio\"\n    FUNCTIONAL = \"functional\"\n    LOWER_PLYO = \"lower_plyo\"\n    UPPER_PLYO = \"upper_plyo\"",
         "detail": "core",
         "documentation": {}
     },
