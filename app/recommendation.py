@@ -202,6 +202,34 @@ def recommend_workout(
                 plan["weight"] = round(stats["weight_total"] / stats["count"], 1)
                 plan["reps"] = int(round(stats["reps_total"] / stats["count"]))
 
+        fatigue = user.recovery.scores.get(movement, 0.0)
+        if stats and stats["count"]:
+            sessions = stats["count"]
+            if movement == Movement.CARDIO:
+                plan["reason"] = (
+                    f"This cardio exercise was selected because your {movement.value.replace('_', ' ')} pattern "
+                    f"is relatively recovered (fatigue {fatigue:.1f}). Duration {plan['duration']} min at "
+                    f"{plan['heart_rate']} bpm reflects the average of your last {sessions} session(s)."
+                )
+            else:
+                plan["reason"] = (
+                    f"Your {movement.value.replace('_', ' ')} pattern is relatively recovered (fatigue {fatigue:.1f}). "
+                    f"Suggested {plan['reps']} reps at {plan['weight']} weight is based on the average of your "
+                    f"last {sessions} session(s)."
+                )
+        else:
+            if movement == Movement.CARDIO:
+                plan["reason"] = (
+                    f"This cardio exercise was selected because your {movement.value.replace('_', ' ')} pattern "
+                    f"is relatively recovered (fatigue {fatigue:.1f}). No recent history found so default "
+                    f"duration {plan['duration']} min and heart rate {plan['heart_rate']} bpm are suggested."
+                )
+            else:
+                plan["reason"] = (
+                    f"Your {movement.value.replace('_', ' ')} pattern is relatively recovered (fatigue {fatigue:.1f}). "
+                    f"No recent history found so default {plan['weight']} weight for {plan['reps']} reps is suggested."
+                )
+
         score = base * muscle_factor * quality_factor * intensity_factor
         scored.append((score, plan))
 
