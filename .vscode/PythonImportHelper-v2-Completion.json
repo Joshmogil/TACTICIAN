@@ -70,6 +70,38 @@
         "documentation": {}
     },
     {
+        "label": "CardioSession",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "PercievedExertion",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
         "label": "WorkDone",
         "importPath": "core",
         "description": "core",
@@ -114,22 +146,6 @@
         "documentation": {}
     },
     {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
         "label": "Enum",
         "importPath": "enum",
         "description": "enum",
@@ -138,7 +154,15 @@
         "documentation": {}
     },
     {
-        "label": "Union",
+        "label": "exp",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "List",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -154,7 +178,15 @@
         "documentation": {}
     },
     {
-        "label": "List",
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -178,14 +210,6 @@
         "documentation": {}
     },
     {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
@@ -194,11 +218,19 @@
         "documentation": {}
     },
     {
-        "label": "exp",
-        "importPath": "math",
-        "description": "math",
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "detail": "math",
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -324,6 +356,14 @@
         "documentation": {}
     },
     {
+        "label": "load_exercises",
+        "importPath": "load_exercises",
+        "description": "load_exercises",
+        "isExtraImport": true,
+        "detail": "load_exercises",
+        "documentation": {}
+    },
+    {
         "label": "load_workout_data",
         "importPath": "workout",
         "description": "workout",
@@ -367,21 +407,30 @@
         "documentation": {}
     },
     {
-        "label": "pandas",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pandas",
-        "description": "pandas",
-        "detail": "pandas",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "datetime",
         "description": "datetime",
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
         "documentation": {}
     },
     {
@@ -461,7 +510,7 @@
         "kind": 6,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "class CardioSession(BaseModel):\n    type: Literal[\"cardio\"] = \"cardio\"\n    exercise_name: str\n    pattern: Movement = Movement.CARDIO\n    ex_duration: float          # minutes\n    ac_duration: float\n    ex_heart_rate: int          # avg bpm\n    ac_heart_rate: int\n    pe: PercievedExertion\n    @property",
+        "peekOfCode": "class CardioSession(BaseModel):\n    type: Literal[\"cardio\"] = \"cardio\"\n    exercise_name: str\n    pattern: Movement = Movement.CARDIO\n    ex_duration: float  # minutes\n    ac_duration: float\n    ex_heart_rate: int  # avg bpm\n    ac_heart_rate: int\n    pe: PercievedExertion\n    @property",
         "detail": "core",
         "documentation": {}
     },
@@ -479,7 +528,7 @@
         "kind": 5,
         "importPath": "core",
         "description": "core",
-        "peekOfCode": "WorkDone = Union[WeightedSet, CardioSession]\nfrom collections import defaultdict\nfrom typing import Iterable, Dict\ndef aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:",
+        "peekOfCode": "WorkDone = Union[WeightedSet, CardioSession]\nfrom collections import defaultdict\nfrom typing import Dict, Iterable\ndef aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:",
         "detail": "core",
         "documentation": {}
     },
@@ -560,7 +609,7 @@
         "kind": 6,
         "importPath": "workout",
         "description": "workout",
-        "peekOfCode": "class Workout(BaseModel):\n    date: dt.date\n    work_done: List[WorkDone]\ndef df_to_workout(df: pd.DataFrame) -> Workout:\n  for _, row in df.iterrows():\n        # Skip rows without an exercise name (empty string or NaN)\n        if pd.isna(row.get('exercise')) or row.get('exercise') == '':\n            continue\ndef load_workout_data(directory=\"_Workouts\"):\n    \"\"\"",
+        "peekOfCode": "class Workout(BaseModel):\n    date: dt.date\n    work_done: List[WorkDone]\ndef _parse_date(date_str):\n    \"\"\"Convert date string like '6-9-2025' to datetime.date object\"\"\"\n    try:\n        # Parse the date string with month-day-year format\n        return datetime.datetime.strptime(date_str, \"%m-%d-%Y\").date()\n    except ValueError:\n        print(f\"Error parsing date: {date_str}\")",
         "detail": "workout",
         "documentation": {}
     },
@@ -569,7 +618,7 @@
         "kind": 2,
         "importPath": "workout",
         "description": "workout",
-        "peekOfCode": "def df_to_workout(df: pd.DataFrame) -> Workout:\n  for _, row in df.iterrows():\n        # Skip rows without an exercise name (empty string or NaN)\n        if pd.isna(row.get('exercise')) or row.get('exercise') == '':\n            continue\ndef load_workout_data(directory=\"_Workouts\"):\n    \"\"\"\n    Load all CSV files from the specified directory into pandas DataFrames\n    Args:\n        directory (str): Path to the directory containing workout files",
+        "peekOfCode": "def df_to_workout(date: datetime.date, df: pd.DataFrame) -> Workout:\n    \"\"\"Convert a raw workout CSV ``DataFrame`` into a ``Workout`` model.\"\"\"\n    exercises = load_exercises()\n    lookup = {_canon(k): k for k in exercises}\n    # manual typo corrections\n    lookup[\"windshieldwhipers\"] = \"Windshield Wipers\"\n    work_items: List[WorkDone] = []\n    current_ex = None\n    for _, row in df.iterrows():\n        raw_name = row.get(\"exercise\")",
         "detail": "workout",
         "documentation": {}
     },
@@ -587,7 +636,7 @@
         "kind": 5,
         "importPath": "workout",
         "description": "workout",
-        "peekOfCode": "workouts = load_workout_data()\n# Example: Access a specific workout by name\n# If you have a file \"_Workouts/Running_Log.csv\", access it with:\n# running_df = workouts[\"Running_Log\"] \n# Example: Process all workouts\nfor name, df in workouts.items():\n    print(f\"\\nWorkout: {name}\")\n    print(f\"Shape: {df.shape}\")\n    print(f\"Columns: {', '.join(df.columns)}\")",
+        "peekOfCode": "workouts = load_workout_data()\n# Example: Access a specific workout by name\n# If you have a file \"_Workouts/Running_Log.csv\", access it with:\n# running_df = workouts[\"Running_Log\"]\n# Example: Process all workouts\nfor name, item in workouts.items():\n    print(f\"\\nWorkout: {name}\")\n    print(item)",
         "detail": "workout",
         "documentation": {}
     }

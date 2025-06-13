@@ -8,11 +8,20 @@ from pydantic import BaseModel
 
 from core import CardioSession, Movement, PercievedExertion, WeightedSet, WorkDone
 from load_exercises import load_exercises
-
+import datetime
 
 class Workout(BaseModel):
     date: dt.date
     work_done: List[WorkDone]
+
+def _parse_date(date_str):
+    """Convert date string like '6-9-2025' to datetime.date object"""
+    try:
+        # Parse the date string with month-day-year format
+        return datetime.datetime.strptime(date_str, "%m-%d-%Y").date()
+    except ValueError:
+        print(f"Error parsing date: {date_str}")
+        return None
 
 
 def _canon(name: str) -> str:
@@ -40,7 +49,7 @@ def _parse_pe(val) -> PercievedExertion:
     return PercievedExertion(n)
 
 
-def df_to_workout(df: pd.DataFrame) -> Workout:
+def df_to_workout(date: datetime.date, df: pd.DataFrame) -> Workout:
     """Convert a raw workout CSV ``DataFrame`` into a ``Workout`` model."""
 
     exercises = load_exercises()
@@ -95,7 +104,7 @@ def df_to_workout(df: pd.DataFrame) -> Workout:
 
         work_items.append(item)
 
-    return Workout(date=dt.date.today(), work_done=work_items)
+    return Workout(date=date, work_done=work_items)
 
 
 def load_workout_data(directory="_Workouts"):
@@ -134,7 +143,10 @@ def load_workout_data(directory="_Workouts"):
 
             # Store DataFrame with filename (without extension) as key
             filename = os.path.splitext(file)[0]
-            workout_data[filename] = df
+            workout_data[filename] = df_to_workout(
+                date=_parse_date(filename),
+                df=df
+                )
 
             print(f"Loaded: {filename} ({len(df)} rows)")
         except Exception as e:
@@ -152,7 +164,6 @@ workouts = load_workout_data()
 # running_df = workouts["Running_Log"]
 
 # Example: Process all workouts
-for name, df in workouts.items():
+for name, item in workouts.items():
     print(f"\nWorkout: {name}")
-    print(f"Shape: {df.shape}")
-    print(f"Columns: {', '.join(df.columns)}")
+    print(item)
