@@ -28,9 +28,16 @@ def test_recommendation_ranks_by_intensity():
     )
     update_recovery(user, [ws1, ws2], timestamp=dt.datetime.utcnow())
     recs = recommend_workout(user, max_exercises=50)
-    assert "Dumbbell Row" in recs
-    assert "Dumbbell Bench" in recs
-    assert recs.index("Dumbbell Row") < recs.index("Dumbbell Bench")
+    names = [r["name"] for r in recs]
+    assert "Dumbbell Row" in names
+    assert "Dumbbell Bench" in names
+    assert names.index("Dumbbell Row") < names.index("Dumbbell Bench")
+    row = next(r for r in recs if r["name"] == "Dumbbell Row")
+    bench = next(r for r in recs if r["name"] == "Dumbbell Bench")
+    assert row["weight"] == 20
+    assert row["reps"] == 5
+    assert bench["weight"] == 20
+    assert bench["reps"] == 5
 
 
 def test_recommendation_filters_fatigued_muscles():
@@ -46,7 +53,8 @@ def test_recommendation_filters_fatigued_muscles():
     )
     update_recovery(user, [heavy], timestamp=dt.datetime.utcnow())
     recs = recommend_workout(user, max_exercises=25)
-    assert "Dumbbell Bench" not in recs
+    names = [r["name"] for r in recs] if isinstance(recs, list) else []
+    assert "Dumbbell Bench" not in names
 
 
 def test_recommendation_ranks_cardio_history():
@@ -61,6 +69,10 @@ def test_recommendation_ranks_cardio_history():
     )
     update_recovery(user, [run], timestamp=dt.datetime.utcnow())
     recs = recommend_workout(user, max_exercises=25)
-    assert "Jump Rope" in recs
-    assert "Run" in recs
-    assert recs.index("Jump Rope") < recs.index("Run")
+    names = [r["name"] for r in recs]
+    assert "Jump Rope" in names
+    assert "Run" in names
+    assert names.index("Jump Rope") < names.index("Run")
+    run_rec = next(r for r in recs if r["name"] == "Run")
+    assert run_rec["duration"] == 30
+    assert run_rec["heart_rate"] == 170

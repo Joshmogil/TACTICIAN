@@ -39,6 +39,7 @@ def recovery_status(user_id: str):
 
 @router.get("/users/{user_id}/recommendations")
 def workout_recommendations(user_id: str):
+    """Return exercise recommendations with intensity suggestions."""
     user = get_user(user_id)
     recs = recommend_workout(user)
     return {"recommendations": recs}
