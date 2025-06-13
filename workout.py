@@ -149,6 +149,21 @@ def load_workout_data(directory="_Workouts", user_id: str = "default"):
     return workout_data
 
 
+def load_user_history(user_id: str, directory: str = "_Workouts") -> Dict[str, Workout]:
+    """Load workouts from ``directory`` and apply them to a User."""
+
+    from datetime import datetime, time
+    from app.api import get_user
+    from app.recovery import update_recovery
+
+    data = load_workout_data(directory=directory, user_id=user_id)
+    user = get_user(user_id)
+    for workout in sorted(data.values(), key=lambda w: w.date):
+        ts = datetime.combine(workout.date, time.min)
+        update_recovery(user, workout.work_done, timestamp=ts)
+    return data
+
+
 workouts = load_workout_data()
 
 if __name__ == "__main__":

@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ## Running the API
 
-The API is defined in `app.main`. When the server starts it loads all CSV files in the `_Workouts/` directory for a default user named **Josh**. Exercises are populated from the YAML files in `exercises/`.
+The API is defined in `app.main`. When the server starts it loads all CSV files in the `_Workouts/` directory for a default user named **Josh**. The helper `load_user_history` parses these files and updates Josh's recovery state so recommendations immediately reflect his recent training. Exercises are populated from the YAML files in `exercises/`.
 
 Start the server with:
 
