@@ -27,27 +27,35 @@ DEFAULT_DURATION = 20
 DEFAULT_HR = 120
 
 
-def _build_plan(user: User, name: str) -> Dict[str, object]:
-    """Return a simple plan for the exercise based on history."""
+def _build_plan(user: User, name: str, *, window: int = 3) -> Dict[str, object]:
+    """Return a plan for the exercise using recent history."""
+
     weights: List[float] = []
     reps: List[int] = []
     durations: List[float] = []
     heart_rates: List[int] = []
 
-    for rec in user.workouts:
+    # gather most recent occurrences of the exercise
+    recent: List[WorkDone] = []
+    for rec in sorted(user.workouts, key=lambda r: r.date, reverse=True):
         for item in rec.work_done:
-            if item.exercise_name != name:
-                continue
-            if isinstance(item, WeightedSet):
-                if item.ac_weight or item.ex_weight:
-                    weights.append(item.ac_weight or item.ex_weight)
-                if item.ac_reps or item.ex_reps:
-                    reps.append(item.ac_reps or item.ex_reps)
-            elif isinstance(item, CardioSession):
-                if item.ac_duration or item.ex_duration:
-                    durations.append(item.ac_duration or item.ex_duration)
-                if item.ac_heart_rate or item.ex_heart_rate:
-                    heart_rates.append(item.ac_heart_rate or item.ex_heart_rate)
+            if item.exercise_name == name:
+                recent.append(item)
+                if len(recent) >= window:
+                    break
+        if len(recent) >= window:
+            break
+
+    for item in recent:
+        if isinstance(item, WeightedSet):
+            weight = item.ac_weight if item.ac_weight else item.ex_weight
+            reps.append(item.ac_reps if item.ac_reps else item.ex_reps)
+            weights.append(weight)
+        elif isinstance(item, CardioSession):
+            duration = item.ac_duration if item.ac_duration else item.ex_duration
+            hr = item.ac_heart_rate if item.ac_heart_rate else item.ex_heart_rate
+            durations.append(duration)
+            heart_rates.append(hr)
 
     info = EXERCISES.get(name)
     movement = info.get("movement") if info else ""

@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 
 from app.api import router
-from workout import load_workout_data
+from workout import load_user_history
 
 
 app = FastAPI()
 
-# Preload the sample workout CSV files for a default user
-load_workout_data(user_id="Josh")
+# Preload the sample workout CSV files for a default user and
+# apply them to the in-memory state so recommendations work
+load_user_history(user_id="Josh")
 
 app.include_router(router)
 
