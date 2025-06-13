@@ -13,6 +13,7 @@ from core import (
     PercievedExertion,
     WeightedSet,
     WorkDone,
+    DEFAULT_BODYWEIGHT,
     aggregate_workload,
 )
 from load_exercises import load_exercises
@@ -64,7 +65,13 @@ def _parse_pe(val) -> PercievedExertion:
     return PercievedExertion(str(n))
 
 
-def df_to_workout(date: datetime.date, df: pd.DataFrame, user_id: str = "default") -> Workout:
+def df_to_workout(
+    date: datetime.date,
+    df: pd.DataFrame,
+    user_id: str = "default",
+    *,
+    bodyweight: float = DEFAULT_BODYWEIGHT,
+) -> Workout:
     exercises = load_exercises()
     lookup = {_canon(k): k for k in exercises}
     lookup["windshieldwhipers"] = "Windshield Wipers"
@@ -110,6 +117,7 @@ def df_to_workout(date: datetime.date, df: pd.DataFrame, user_id: str = "default
                 ex_reps=_parse_int(row.get("number")),
                 ac_reps=_parse_int(row.get("actual")),
                 pe=pe,
+                bodyweight=bodyweight,
             )
         work_items.append(item)
 
@@ -118,7 +126,9 @@ def df_to_workout(date: datetime.date, df: pd.DataFrame, user_id: str = "default
     return workout
 
 
-def load_workout_data(directory="_Workouts", user_id: str = "default"):
+def load_workout_data(
+    directory="_Workouts", user_id: str = "default", *, bodyweight: float = DEFAULT_BODYWEIGHT
+):
     workout_data = {}
 
     if not os.path.exists(directory):
@@ -141,6 +151,7 @@ def load_workout_data(directory="_Workouts", user_id: str = "default"):
                 date=_parse_date(filename),
                 df=df,
                 user_id=user_id,
+                bodyweight=bodyweight,
             )
             print(f"Loaded: {filename} ({len(df)} rows)")
         except Exception as e:
@@ -156,8 +167,10 @@ def load_user_history(user_id: str, directory: str = "_Workouts") -> Dict[str, W
     from app.api import get_user
     from app.recovery import update_recovery
 
-    data = load_workout_data(directory=directory, user_id=user_id)
     user = get_user(user_id)
+    data = load_workout_data(
+        directory=directory, user_id=user_id, bodyweight=user.default_bodyweight
+    )
     for workout in sorted(data.values(), key=lambda w: w.date):
         ts = datetime.combine(workout.date, time.min)
         update_recovery(user, workout.work_done, timestamp=ts)

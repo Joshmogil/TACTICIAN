@@ -10,6 +10,7 @@ from core import (
     Muscle,
     aggregate_workload,
     aggregate_muscle_workload,
+    DEFAULT_BODYWEIGHT,
 )
 from load_exercises import load_exercises
 
@@ -87,3 +88,18 @@ def test_aggregate_muscle_workload():
     for usage in ex_info.muscles:
         expected = base * usage.amount
         assert math.isclose(muscles[usage.muscle], expected, rel_tol=1e-6)
+
+
+def test_bodyweight_default_workload():
+    ws = WeightedSet(
+        exercise_name="Push Up",
+        pattern=Movement.UPPER_PUSH,
+        ex_weight=0,
+        ac_weight=0,
+        ex_reps=12,
+        ac_reps=12,
+        pe=PercievedExertion.MEDIUM,
+    )
+    intensity = int(PercievedExertion.MEDIUM.value) / int(PercievedExertion.MAX.value)
+    expected = DEFAULT_BODYWEIGHT * 12 * intensity
+    assert ws.workload == expected

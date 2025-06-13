@@ -19,6 +19,7 @@ from core import (
     MuscleUsage,
     WeightedSet,
     WorkDone,
+    DEFAULT_BODYWEIGHT,
     aggregate_muscle_workload,
     aggregate_workload,
 )
@@ -97,5 +98,6 @@ class RecoveryState(BaseModel):
 class User(BaseModel):
     id: str
     name: str
+    default_bodyweight: float = DEFAULT_BODYWEIGHT
     recovery: RecoveryState = RecoveryState()
     workouts: List["WorkoutRecord"] = []
