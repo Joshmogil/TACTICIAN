@@ -6,6 +6,8 @@ from typing import Dict
 from fastapi import APIRouter
 
 from app.models import User
+from core import DEFAULT_BODYWEIGHT
+from pydantic import BaseModel
 from app.recovery import update_recovery
 from app.recommendation import recommend_workout, recommend_movements
 from workout import Workout
@@ -16,9 +18,26 @@ router = APIRouter()
 USERS: Dict[str, User] = {}
 
 
+class UserCreate(BaseModel):
+    name: str | None = None
+    bodyweight: float | None = None
+
+
 def get_user(user_id: str) -> User:
     if user_id not in USERS:
         USERS[user_id] = User(id=user_id, name=user_id)
+    return USERS[user_id]
+
+
+@router.post("/users/{user_id}")
+def create_user(user_id: str, data: UserCreate):
+    if user_id in USERS:
+        return USERS[user_id]
+    USERS[user_id] = User(
+        id=user_id,
+        name=data.name or user_id,
+        default_bodyweight=data.bodyweight or DEFAULT_BODYWEIGHT,
+    )
     return USERS[user_id]
 
 

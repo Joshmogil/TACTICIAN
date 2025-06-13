@@ -7,8 +7,9 @@ from workout import load_user_history
 app = FastAPI()
 
 # Preload the sample workout CSV files for a default user and
-# apply them to the in-memory state so recommendations work
-load_user_history(user_id="Josh")
+# apply them to the in-memory state so recommendations work.
+# Josh is created via ``get_user`` inside ``load_user_history``.
+load_user_history(user_id="Josh", bodyweight=190)
 
 app.include_router(router)
 
