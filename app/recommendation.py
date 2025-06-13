@@ -21,13 +21,54 @@ from load_exercises import load_exercises
 EXERCISES: Dict[str, dict] = load_exercises()
 
 
+DEFAULT_WEIGHT = 20.0
+DEFAULT_REPS = 10
+DEFAULT_DURATION = 20
+DEFAULT_HR = 120
+
+
+def _build_plan(user: User, name: str) -> Dict[str, object]:
+    """Return a simple plan for the exercise based on history."""
+    weights: List[float] = []
+    reps: List[int] = []
+    durations: List[float] = []
+    heart_rates: List[int] = []
+
+    for rec in user.workouts:
+        for item in rec.work_done:
+            if item.exercise_name != name:
+                continue
+            if isinstance(item, WeightedSet):
+                if item.ac_weight or item.ex_weight:
+                    weights.append(item.ac_weight or item.ex_weight)
+                if item.ac_reps or item.ex_reps:
+                    reps.append(item.ac_reps or item.ex_reps)
+            elif isinstance(item, CardioSession):
+                if item.ac_duration or item.ex_duration:
+                    durations.append(item.ac_duration or item.ex_duration)
+                if item.ac_heart_rate or item.ex_heart_rate:
+                    heart_rates.append(item.ac_heart_rate or item.ex_heart_rate)
+
+    info = EXERCISES.get(name)
+    movement = info.get("movement") if info else ""
+
+    if movement == Movement.CARDIO.value:
+        dur = sum(durations) / len(durations) if durations else DEFAULT_DURATION
+        hr = sum(heart_rates) / len(heart_rates) if heart_rates else DEFAULT_HR
+        return {"name": name, "duration": int(round(dur)), "heart_rate": int(round(hr))}
+
+    wt = sum(weights) / len(weights) if weights else DEFAULT_WEIGHT
+    rp = sum(reps) / len(reps) if reps else DEFAULT_REPS
+    return {"name": name, "weight": round(wt, 1), "reps": int(round(rp))}
+
+
 def recommend_workout(
     user: User,
     *,
     max_exercises: int = 5,
     fatigue_threshold: float = 100.0,
-) -> Union[List[str], str]:
-    """Return a list of recommended exercise names or ``"rest"``.
+ ) -> Union[List[Dict[str, object]], str]:
+    """Return a list of workout plans or ``"rest"``.
 
     The algorithm combines the user's recovery state with recent workout
     history. Exercises performed frequently and at high intensity in the recent
@@ -123,7 +164,14 @@ def recommend_workout(
         scored.append((score, ex["name"]))
 
     scored.sort(key=lambda t: t[0], reverse=True)
-    return [name for _, name in scored[:max_exercises]] if scored else "rest"
+    if not scored:
+        return "rest"
+
+    plans: List[Dict[str, object]] = []
+    for _, name in scored[:max_exercises]:
+        plans.append(_build_plan(user, name))
+
+    return plans
 
 
 def recommend_movements(
