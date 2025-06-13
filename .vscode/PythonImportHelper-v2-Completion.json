@@ -1,0 +1,1409 @@
+[
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultDict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Mapping",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "update_recovery",
+        "importPath": "app.recovery",
+        "description": "app.recovery",
+        "isExtraImport": true,
+        "detail": "app.recovery",
+        "documentation": {}
+    },
+    {
+        "label": "update_recovery",
+        "importPath": "app.recovery",
+        "description": "app.recovery",
+        "isExtraImport": true,
+        "detail": "app.recovery",
+        "documentation": {}
+    },
+    {
+        "label": "update_recovery",
+        "importPath": "app.recovery",
+        "description": "app.recovery",
+        "isExtraImport": true,
+        "detail": "app.recovery",
+        "documentation": {}
+    },
+    {
+        "label": "recommend_workout",
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "isExtraImport": true,
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "recommend_movements",
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "isExtraImport": true,
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "recommend_workout",
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "isExtraImport": true,
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "recommend_movements",
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "isExtraImport": true,
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "Workout",
+        "importPath": "workout",
+        "description": "workout",
+        "isExtraImport": true,
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "load_workout_data",
+        "importPath": "workout",
+        "description": "workout",
+        "isExtraImport": true,
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "load_workout_data",
+        "importPath": "workout",
+        "description": "workout",
+        "isExtraImport": true,
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "app.api",
+        "description": "app.api",
+        "isExtraImport": true,
+        "detail": "app.api",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "CardioSession",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Exercise",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Muscle",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleQuality",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleUsage",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_muscle_workload",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_workload",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "CardioSession",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Exercise",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Muscle",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleQuality",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleUsage",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "PercievedExertion",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "CardioSession",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "PercievedExertion",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Exercise",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleQuality",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "PercievedExertion",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "CardioSession",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "PercievedExertion",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Exercise",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleUsage",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleQuality",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Muscle",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_workload",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_muscle_workload",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "CardioSession",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "PercievedExertion",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_workload",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "load_exercises",
+        "importPath": "load_exercises",
+        "description": "load_exercises",
+        "isExtraImport": true,
+        "detail": "load_exercises",
+        "documentation": {}
+    },
+    {
+        "label": "load_exercises",
+        "importPath": "load_exercises",
+        "description": "load_exercises",
+        "isExtraImport": true,
+        "detail": "load_exercises",
+        "documentation": {}
+    },
+    {
+        "label": "load_exercises",
+        "importPath": "load_exercises",
+        "description": "load_exercises",
+        "isExtraImport": true,
+        "detail": "load_exercises",
+        "documentation": {}
+    },
+    {
+        "label": "load_exercises",
+        "importPath": "load_exercises",
+        "description": "load_exercises",
+        "isExtraImport": true,
+        "detail": "load_exercises",
+        "documentation": {}
+    },
+    {
+        "label": "load_exercises",
+        "importPath": "load_exercises",
+        "description": "load_exercises",
+        "isExtraImport": true,
+        "detail": "load_exercises",
+        "documentation": {}
+    },
+    {
+        "label": "TestClient",
+        "importPath": "fastapi.testclient",
+        "description": "fastapi.testclient",
+        "isExtraImport": true,
+        "detail": "fastapi.testclient",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app.main",
+        "description": "app.main",
+        "isExtraImport": true,
+        "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "exp",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "google.auth.transport.requests",
+        "description": "google.auth.transport.requests",
+        "isExtraImport": true,
+        "detail": "google.auth.transport.requests",
+        "documentation": {}
+    },
+    {
+        "label": "Credentials",
+        "importPath": "google.oauth2.credentials",
+        "description": "google.oauth2.credentials",
+        "isExtraImport": true,
+        "detail": "google.oauth2.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "InstalledAppFlow",
+        "importPath": "google_auth_oauthlib.flow",
+        "description": "google_auth_oauthlib.flow",
+        "isExtraImport": true,
+        "detail": "google_auth_oauthlib.flow",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "isExtraImport": true,
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "HttpError",
+        "importPath": "googleapiclient.errors",
+        "description": "googleapiclient.errors",
+        "isExtraImport": true,
+        "detail": "googleapiclient.errors",
+        "documentation": {}
+    },
+    {
+        "label": "MediaIoBaseDownload",
+        "importPath": "googleapiclient.http",
+        "description": "googleapiclient.http",
+        "isExtraImport": true,
+        "detail": "googleapiclient.http",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "get_user",
+        "kind": 2,
+        "importPath": "app.api",
+        "description": "app.api",
+        "peekOfCode": "def get_user(user_id: str) -> User:\n    if user_id not in USERS:\n        USERS[user_id] = User(id=user_id, name=user_id)\n    return USERS[user_id]\n@router.post(\"/users/{user_id}/workouts\")\ndef log_workout(user_id: str, workout: Workout):\n    user = get_user(user_id)\n    timestamp = datetime.combine(workout.date, datetime.min.time())\n    update_recovery(user, workout.work_done, timestamp=timestamp)\n    return {\"status\": \"logged\", \"recovery\": user.recovery.scores}",
+        "detail": "app.api",
+        "documentation": {}
+    },
+    {
+        "label": "log_workout",
+        "kind": 2,
+        "importPath": "app.api",
+        "description": "app.api",
+        "peekOfCode": "def log_workout(user_id: str, workout: Workout):\n    user = get_user(user_id)\n    timestamp = datetime.combine(workout.date, datetime.min.time())\n    update_recovery(user, workout.work_done, timestamp=timestamp)\n    return {\"status\": \"logged\", \"recovery\": user.recovery.scores}\n@router.get(\"/users/{user_id}/recovery\")\ndef recovery_status(user_id: str):\n    user = get_user(user_id)\n    user.recovery.decay(datetime.utcnow())\n    return user.recovery.scores",
+        "detail": "app.api",
+        "documentation": {}
+    },
+    {
+        "label": "recovery_status",
+        "kind": 2,
+        "importPath": "app.api",
+        "description": "app.api",
+        "peekOfCode": "def recovery_status(user_id: str):\n    user = get_user(user_id)\n    user.recovery.decay(datetime.utcnow())\n    return user.recovery.scores\n@router.get(\"/users/{user_id}/recommendations\")\ndef workout_recommendations(user_id: str):\n    \"\"\"Return exercise recommendations with intensity suggestions.\"\"\"\n    user = get_user(user_id)\n    recs = recommend_workout(user)\n    return {\"recommendations\": recs}",
+        "detail": "app.api",
+        "documentation": {}
+    },
+    {
+        "label": "workout_recommendations",
+        "kind": 2,
+        "importPath": "app.api",
+        "description": "app.api",
+        "peekOfCode": "def workout_recommendations(user_id: str):\n    \"\"\"Return exercise recommendations with intensity suggestions.\"\"\"\n    user = get_user(user_id)\n    recs = recommend_workout(user)\n    return {\"recommendations\": recs}\n@router.get(\"/users/{user_id}/snapshot\")\ndef recovery_snapshot(user_id: str):\n    \"\"\"Return recovery scores and suggested movement patterns.\"\"\"\n    user = get_user(user_id)\n    movements = [m.value for m in recommend_movements(user)]",
+        "detail": "app.api",
+        "documentation": {}
+    },
+    {
+        "label": "recovery_snapshot",
+        "kind": 2,
+        "importPath": "app.api",
+        "description": "app.api",
+        "peekOfCode": "def recovery_snapshot(user_id: str):\n    \"\"\"Return recovery scores and suggested movement patterns.\"\"\"\n    user = get_user(user_id)\n    movements = [m.value for m in recommend_movements(user)]\n    return {\"recovery\": user.recovery.scores, \"recommended_movements\": movements}",
+        "detail": "app.api",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "app.api",
+        "description": "app.api",
+        "peekOfCode": "router = APIRouter()\n# in-memory user storage\nUSERS: Dict[str, User] = {}\ndef get_user(user_id: str) -> User:\n    if user_id not in USERS:\n        USERS[user_id] = User(id=user_id, name=user_id)\n    return USERS[user_id]\n@router.post(\"/users/{user_id}/workouts\")\ndef log_workout(user_id: str, workout: Workout):\n    user = get_user(user_id)",
+        "detail": "app.api",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.main",
+        "description": "app.main",
+        "peekOfCode": "app = FastAPI()\n# Preload the sample workout CSV files for a default user\nload_workout_data(user_id=\"Josh\")\napp.include_router(router)\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)",
+        "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "RecoveryState",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class RecoveryState(BaseModel):\n    \"\"\"Stores fatigue levels for each movement pattern.\"\"\"\n    scores: Dict[Movement, float] = {}\n    muscle_scores: Dict[Muscle, float] = {}\n    quality_scores: Dict[MuscleQuality, float] = {}\n    last_update: Optional[datetime] = None\n    def decay(self, now: datetime, half_life_hours: float = 48) -> None:\n        \"\"\"Apply exponential decay to all scores based on time since last update.\"\"\"\n        if self.last_update is None:\n            self.last_update = now",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class User(BaseModel):\n    id: str\n    name: str\n    recovery: RecoveryState = RecoveryState()\n    workouts: List[\"WorkoutRecord\"] = []",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "recommend_workout",
+        "kind": 2,
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "peekOfCode": "def recommend_workout(\n    user: User,\n    *,\n    max_exercises: int = 5,\n    fatigue_threshold: float = 100.0,\n) -> Union[List[Dict[str, Union[str, float, int]]], str]:\n    \"\"\"Return recommended exercises with basic parameters or ``\"rest\"``.\n    Each recommendation includes the exercise ``name`` and, when available,\n    suggested ``reps``/``weight`` for weighted movements or ``duration`` and\n    ``heart_rate`` for cardio.",
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_WEIGHT",
+        "kind": 5,
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "peekOfCode": "DEFAULT_WEIGHT = 20.0\nDEFAULT_REPS = 10\nDEFAULT_DURATION = 20\nDEFAULT_HR = 120\ndef _build_plan(user: User, name: str) -> Dict[str, object]:\n    \"\"\"Return a simple plan for the exercise based on history.\"\"\"\n    weights: List[float] = []\n    reps: List[int] = []\n    durations: List[float] = []\n    heart_rates: List[int] = []",
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_REPS",
+        "kind": 5,
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "peekOfCode": "DEFAULT_REPS = 10\nDEFAULT_DURATION = 20\nDEFAULT_HR = 120\ndef _build_plan(user: User, name: str) -> Dict[str, object]:\n    \"\"\"Return a simple plan for the exercise based on history.\"\"\"\n    weights: List[float] = []\n    reps: List[int] = []\n    durations: List[float] = []\n    heart_rates: List[int] = []\n    for rec in user.workouts:",
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_DURATION",
+        "kind": 5,
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "peekOfCode": "DEFAULT_DURATION = 20\nDEFAULT_HR = 120\ndef _build_plan(user: User, name: str) -> Dict[str, object]:\n    \"\"\"Return a simple plan for the exercise based on history.\"\"\"\n    weights: List[float] = []\n    reps: List[int] = []\n    durations: List[float] = []\n    heart_rates: List[int] = []\n    for rec in user.workouts:\n        for item in rec.work_done:",
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_HR",
+        "kind": 5,
+        "importPath": "app.recommendation",
+        "description": "app.recommendation",
+        "peekOfCode": "DEFAULT_HR = 120\ndef _build_plan(user: User, name: str) -> Dict[str, object]:\n    \"\"\"Return a simple plan for the exercise based on history.\"\"\"\n    weights: List[float] = []\n    reps: List[int] = []\n    durations: List[float] = []\n    heart_rates: List[int] = []\n    for rec in user.workouts:\n        for item in rec.work_done:\n            if item.exercise_name != name:",
+        "detail": "app.recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "WorkoutRecord",
+        "kind": 6,
+        "importPath": "app.recovery",
+        "description": "app.recovery",
+        "peekOfCode": "class WorkoutRecord(BaseModel):\n    date: datetime\n    work_done: List[WorkDone]\n# resolve forward reference in User once WorkoutRecord is defined\nUser.model_rebuild()",
+        "detail": "app.recovery",
+        "documentation": {}
+    },
+    {
+        "label": "update_recovery",
+        "kind": 2,
+        "importPath": "app.recovery",
+        "description": "app.recovery",
+        "peekOfCode": "def update_recovery(user: User, work: List[WorkDone], *, timestamp: datetime | None = None) -> None:\n    \"\"\"Update a user's recovery state with the completed work.\"\"\"\n    now = timestamp or datetime.utcnow()\n    user.recovery.apply_workout(work, now)\n    user.workouts.append(\n        WorkoutRecord(date=now, work_done=work)\n    )\nclass WorkoutRecord(BaseModel):\n    date: datetime\n    work_done: List[WorkDone]",
+        "detail": "app.recovery",
+        "documentation": {}
+    },
+    {
+        "label": "test_snapshot_endpoint",
+        "kind": 2,
+        "importPath": "tests.test_api",
+        "description": "tests.test_api",
+        "peekOfCode": "def test_snapshot_endpoint():\n    client = TestClient(app)\n    resp = client.get(\"/users/test_user/snapshot\")\n    assert resp.status_code == 200\n    data = resp.json()\n    assert \"recovery\" in data\n    assert \"recommended_movements\" in data\n    assert isinstance(data[\"recommended_movements\"], list)",
+        "detail": "tests.test_api",
+        "documentation": {}
+    },
+    {
+        "label": "test_recommendation_ranks_by_intensity",
+        "kind": 2,
+        "importPath": "tests.test_recommendation",
+        "description": "tests.test_recommendation",
+        "peekOfCode": "def test_recommendation_ranks_by_intensity():\n    user = User(id=\"u1\", name=\"User\")\n    ws1 = WeightedSet(\n        exercise_name=\"Dumbbell Bench\",\n        pattern=Movement.UPPER_PUSH,\n        ex_weight=20,\n        ac_weight=20,\n        ex_reps=5,\n        ac_reps=5,\n        pe=PercievedExertion.HIGH,",
+        "detail": "tests.test_recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "test_recommendation_filters_fatigued_muscles",
+        "kind": 2,
+        "importPath": "tests.test_recommendation",
+        "description": "tests.test_recommendation",
+        "peekOfCode": "def test_recommendation_filters_fatigued_muscles():\n    user = User(id=\"u1\", name=\"User\")\n    heavy = WeightedSet(\n        exercise_name=\"Dumbbell Bench\",\n        pattern=Movement.UPPER_PUSH,\n        ex_weight=50,\n        ac_weight=50,\n        ex_reps=10,\n        ac_reps=10,\n        pe=PercievedExertion.MAX,",
+        "detail": "tests.test_recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "test_recommendation_ranks_cardio_history",
+        "kind": 2,
+        "importPath": "tests.test_recommendation",
+        "description": "tests.test_recommendation",
+        "peekOfCode": "def test_recommendation_ranks_cardio_history():\n    user = User(id=\"u1\", name=\"User\")\n    run = CardioSession(\n        exercise_name=\"Run\",\n        ex_duration=30,\n        ac_duration=30,\n        ex_heart_rate=170,\n        ac_heart_rate=170,\n        pe=PercievedExertion.HIGH,\n    )",
+        "detail": "tests.test_recommendation",
+        "documentation": {}
+    },
+    {
+        "label": "test_recovery_update_and_decay",
+        "kind": 2,
+        "importPath": "tests.test_recovery",
+        "description": "tests.test_recovery",
+        "peekOfCode": "def test_recovery_update_and_decay():\n    user = User(id=\"u1\", name=\"User\")\n    ws = WeightedSet(\n        exercise_name=\"Dumbbell Bench\",\n        pattern=Movement.UPPER_PUSH,\n        ex_weight=100,\n        ac_weight=100,\n        ex_reps=5,\n        ac_reps=5,\n        pe=PercievedExertion.HIGH,",
+        "detail": "tests.test_recovery",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_workout_data_pipeline",
+        "kind": 2,
+        "importPath": "tests.test_recovery",
+        "description": "tests.test_recovery",
+        "peekOfCode": "def test_load_workout_data_pipeline():\n    workouts = load_workout_data()\n    # we expect all csv files to be loaded\n    assert len(workouts) >= 4\n    for w in workouts.values():\n        assert len(w.work_done) > 0\n        # check that totals returns a mapping with movements\n        assert isinstance(w.totals, dict)",
+        "detail": "tests.test_recovery",
+        "documentation": {}
+    },
+    {
+        "label": "test_weightedset_workload",
+        "kind": 2,
+        "importPath": "tests.test_workload",
+        "description": "tests.test_workload",
+        "peekOfCode": "def test_weightedset_workload():\n    ws = WeightedSet(\n        exercise_name=\"Bench\",\n        pattern=Movement.UPPER_PUSH,\n        ex_weight=100,\n        ac_weight=120,\n        ex_reps=8,\n        ac_reps=6,\n        pe=PercievedExertion.HIGH,\n    )",
+        "detail": "tests.test_workload",
+        "documentation": {}
+    },
+    {
+        "label": "test_cardiosession_workload",
+        "kind": 2,
+        "importPath": "tests.test_workload",
+        "description": "tests.test_workload",
+        "peekOfCode": "def test_cardiosession_workload():\n    cs = CardioSession(\n        exercise_name=\"Run\",\n        ex_duration=20,\n        ac_duration=20,\n        ex_heart_rate=170,\n        ac_heart_rate=180,\n        pe=PercievedExertion.MEDIUM,\n    )\n    hr_ratio = (180 - 60) / (190 - 60)",
+        "detail": "tests.test_workload",
+        "documentation": {}
+    },
+    {
+        "label": "test_aggregate_workload",
+        "kind": 2,
+        "importPath": "tests.test_workload",
+        "description": "tests.test_workload",
+        "peekOfCode": "def test_aggregate_workload():\n    ws = WeightedSet(\n        exercise_name=\"Bench\",\n        pattern=Movement.UPPER_PUSH,\n        ex_weight=100,\n        ac_weight=100,\n        ex_reps=5,\n        ac_reps=5,\n        pe=PercievedExertion.HIGH,\n    )",
+        "detail": "tests.test_workload",
+        "documentation": {}
+    },
+    {
+        "label": "test_aggregate_muscle_workload",
+        "kind": 2,
+        "importPath": "tests.test_workload",
+        "description": "tests.test_workload",
+        "peekOfCode": "def test_aggregate_muscle_workload():\n    raw_ex = load_exercises()\n    # only convert the exercise needed for this test\n    exercises = {\"Dumbbell Bench\": Exercise(**raw_ex[\"Dumbbell Bench\"])}\n    ws = WeightedSet(\n        exercise_name=\"Dumbbell Bench\",\n        pattern=Movement.UPPER_PUSH,\n        ex_weight=100,\n        ac_weight=100,\n        ex_reps=10,",
+        "detail": "tests.test_workload",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class Movement(str, Enum):\n    UPPER_PUSH = \"upper_push\"\n    UPPER_PULL = \"upper_pull\"\n    LOWER_PUSH = \"lower_push\"\n    LOWER_PULL = \"lower_pull\"\n    CORE = \"core\"\n    CARDIO = \"cardio\"\n    FUNCTIONAL = \"functional\"\n    LOWER_PLYO = \"lower_plyo\"\n    UPPER_PLYO = \"upper_plyo\"",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Muscle",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class Muscle(str, Enum):\n    LATS = \"lats\"\n    CHEST = \"chest\"\n    FRONT_DELTS = \"front_shoulder\"\n    MEDIAL_DELTS = \"medial_delts\"\n    REAR_DELTS = \"rear_delts\"\n    TRAPS = \"traps\"\n    TRICEPS = \"triceps\"\n    BICEPS = \"biceps\"\n    FOREARMS = \"forearms\"",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "PercievedExertion",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class PercievedExertion(str, Enum):\n    LOW = 1\n    MEDIUM = 2\n    HIGH = 3\n    MAX = 4\nclass MuscleQuality(str, Enum):\n    ENERGY = \"energy\"\n    STRENGTH = \"strength\"\nclass MuscleUsage(BaseModel):\n    muscle: Muscle",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleQuality",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class MuscleQuality(str, Enum):\n    ENERGY = \"energy\"\n    STRENGTH = \"strength\"\nclass MuscleUsage(BaseModel):\n    muscle: Muscle\n    amount: float\n    quality: MuscleQuality\nclass Exercise(BaseModel):\n    name: str\n    movement: Movement",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "MuscleUsage",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class MuscleUsage(BaseModel):\n    muscle: Muscle\n    amount: float\n    quality: MuscleQuality\nclass Exercise(BaseModel):\n    name: str\n    movement: Movement\n    muscles: List[MuscleUsage]\nclass WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "Exercise",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class Exercise(BaseModel):\n    name: str\n    movement: Movement\n    muscles: List[MuscleUsage]\nclass WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    ex_weight: float  # kg\n    ac_weight: float",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WeightedSet",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class WeightedSet(BaseModel):\n    type: Literal[\"weighted\"] = \"weighted\"\n    exercise_name: str\n    pattern: Movement\n    ex_weight: float  # kg\n    ac_weight: float\n    ex_reps: int\n    ac_reps: int\n    pe: PercievedExertion\n    @property",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "CardioSession",
+        "kind": 6,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "class CardioSession(BaseModel):\n    type: Literal[\"cardio\"] = \"cardio\"\n    exercise_name: str\n    pattern: Movement = Movement.CARDIO\n    ex_duration: float  # minutes\n    ac_duration: float\n    ex_heart_rate: int  # avg bpm\n    ac_heart_rate: int\n    pe: PercievedExertion\n    @property",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_workload",
+        "kind": 2,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "def aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:\n        tally[w.pattern] += w.workload\n    return dict(tally)\ndef aggregate_muscle_workload(",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "aggregate_muscle_workload",
+        "kind": 2,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "def aggregate_muscle_workload(\n    work: Iterable[WorkDone], exercises: Mapping[str, Exercise]\n) -> Dict[Muscle, float]:\n    \"\"\"Sum workload for each muscle involved in the supplied work.\"\"\"\n    tally: Dict[Muscle, float] = defaultdict(float)\n    for w in work:\n        if isinstance(w, WeightedSet):\n            ex = exercises.get(w.exercise_name)\n            if not ex:\n                continue",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "WorkDone",
+        "kind": 5,
+        "importPath": "core",
+        "description": "core",
+        "peekOfCode": "WorkDone = Union[WeightedSet, CardioSession]\nfrom collections import defaultdict\nfrom typing import Dict, Iterable, Mapping\ndef aggregate_workload(work: Iterable[WorkDone]) -> Dict[Movement, float]:\n    \"\"\"\n    Sum workload by movement pattern.\n    If pattern is CARDIO or CORE that’s fine—they get their own bucket.\n    \"\"\"\n    tally: Dict[Movement, float] = defaultdict(float)\n    for w in work:",
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "load_exercises",
+        "kind": 2,
+        "importPath": "load_exercises",
+        "description": "load_exercises",
+        "peekOfCode": "def load_exercises(directory: str = \"exercises\") -> Dict[str, dict]:\n    \"\"\"Load all exercise YAML files into a mapping by exercise name.\n    Each exercise dictionary contains ``name``, ``movement`` and ``muscles``\n    keys exactly as specified in the YAML files.\n    \"\"\"\n    result: Dict[str, dict] = {}\n    for yaml_file in Path(directory).rglob(\"*.yaml\"):\n        with yaml_file.open() as f:\n            data = yaml.safe_load(f) or []\n            for exercise in data:",
+        "detail": "load_exercises",
+        "documentation": {}
+    },
+    {
+        "label": "setup_local_folder",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def setup_local_folder(folder_name):\n    \"\"\"Create or clear the local folder\"\"\"\n    if os.path.exists(folder_name):\n        # Remove existing folder and its contents\n        shutil.rmtree(folder_name)\n    # Create fresh folder\n    os.makedirs(folder_name)\n    print(f\"Local folder '{folder_name}' prepared.\")\ndef find_folder_id(service, folder_name):\n    \"\"\"Find the folder ID for the specified folder name\"\"\"",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "find_folder_id",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def find_folder_id(service, folder_name):\n    \"\"\"Find the folder ID for the specified folder name\"\"\"\n    query = f\"name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'\"\n    results = service.files().list(q=query, spaces='drive').execute()\n    items = results.get('files', [])\n    if not items:\n        print(f\"No folder named '{folder_name}' found in Google Drive.\")\n        return None\n    return items[0]['id']\ndef download_folder_contents(service, folder_id, local_folder):",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "download_folder_contents",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def download_folder_contents(service, folder_id, local_folder):\n    \"\"\"Download all files from the specified folder to local folder\"\"\"\n    # Query for files in the specified folder\n    query = f\"'{folder_id}' in parents\"\n    results = service.files().list(q=query).execute()\n    items = results.get('files', [])\n    if not items:\n        print(f\"No files found in the folder.\")\n        return\n    # Define mime type mappings for exports",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "def main():\n    \"\"\"Downloads all files from '_Workouts' folder in Google Drive to a local folder.\"\"\"\n    FOLDER_NAME = \"_Workouts\"\n    # Remove existing token to force re-authorization\n    if os.path.exists(\"token.json\"):\n        print(\"Removing old token to ensure proper permissions...\")\n        os.remove(\"token.json\")\n    creds = None\n    if os.path.exists(\"token.json\"):\n        creds = Credentials.from_authorized_user_file(\"token.json\", SCOPES)",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "SCOPES",
+        "kind": 5,
+        "importPath": "sync_drive",
+        "description": "sync_drive",
+        "peekOfCode": "SCOPES = [\n    \"https://www.googleapis.com/auth/drive\",\n    \"https://www.googleapis.com/auth/drive.readonly\",\n    \"https://www.googleapis.com/auth/drive.file\"\n]\ndef setup_local_folder(folder_name):\n    \"\"\"Create or clear the local folder\"\"\"\n    if os.path.exists(folder_name):\n        # Remove existing folder and its contents\n        shutil.rmtree(folder_name)",
+        "detail": "sync_drive",
+        "documentation": {}
+    },
+    {
+        "label": "Workout",
+        "kind": 6,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "class Workout(BaseModel):\n    date: dt.date\n    user_id: str = \"default\"\n    work_done: List[WorkDone]\n    @property\n    def totals(self) -> Dict[Movement, float]:\n        return aggregate_workload(self.work_done)\nWORKOUT_HISTORY: Dict[str, List[Workout]] = defaultdict(list)\ndef _parse_date(date_str):\n    \"\"\"Convert date string like '6-9-2025' to datetime.date object\"\"\"",
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "df_to_workout",
+        "kind": 2,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "def df_to_workout(date: datetime.date, df: pd.DataFrame, user_id: str = \"default\") -> Workout:\n    exercises = load_exercises()\n    lookup = {_canon(k): k for k in exercises}\n    lookup[\"windshieldwhipers\"] = \"Windshield Wipers\"\n    work_items: List[WorkDone] = []\n    current_ex = None\n    for _, row in df.iterrows():\n        raw_name = row.get(\"exercise\")\n        if isinstance(raw_name, str) and raw_name.strip():\n            current_ex = raw_name.strip()",
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "load_workout_data",
+        "kind": 2,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "def load_workout_data(directory=\"_Workouts\", user_id: str = \"default\"):\n    workout_data = {}\n    if not os.path.exists(directory):\n        print(f\"Directory '{directory}' not found.\")\n        return workout_data\n    files = os.listdir(directory)\n    csv_files = [f for f in files if f.endswith(\".csv\")]\n    if not csv_files:\n        print(f\"No CSV files found in '{directory}'.\")\n        return workout_data",
+        "detail": "workout",
+        "documentation": {}
+    },
+    {
+        "label": "workouts",
+        "kind": 5,
+        "importPath": "workout",
+        "description": "workout",
+        "peekOfCode": "workouts = load_workout_data()\nif __name__ == \"__main__\":\n    for name, item in workouts.items():\n        print(f\"\\nWorkout: {name}\")\n        print(item)",
+        "detail": "workout",
+        "documentation": {}
+    }
+]
