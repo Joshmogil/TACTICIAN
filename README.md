@@ -144,3 +144,14 @@ alembic upgrade head
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request 
+## Loading Built-in Exercises
+
+Use `load_exercises.py` to read the predefined exercise YAML files.
+The script relies on PyYAML, so make sure the dependencies are installed:
+
+```bash
+python load_exercises.py
+```
+
+This will print the number of exercises parsed from the `exercises/` folder.
+
