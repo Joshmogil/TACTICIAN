@@ -1,7 +1,7 @@
 import datetime as dt
 
 from app.models import User
-from app.recommendation import recommend_workout
+from app.recommendation import recommend_workout, recommend_movements
 from app.recovery import update_recovery
 from core import CardioSession, Movement, PercievedExertion, WeightedSet
 
@@ -64,3 +64,9 @@ def test_recommendation_ranks_cardio_history():
     assert "Jump Rope" in recs
     assert "Run" in recs
     assert recs.index("Jump Rope") < recs.index("Run")
+
+
+def test_recommend_movements_returns_all_when_fresh():
+    user = User(id="u1", name="User")
+    moves = recommend_movements(user)
+    assert set(m.value for m in moves) == set(m.value for m in Movement)

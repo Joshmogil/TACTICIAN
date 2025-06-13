@@ -124,3 +124,19 @@ def recommend_workout(
 
     scored.sort(key=lambda t: t[0], reverse=True)
     return [name for _, name in scored[:max_exercises]] if scored else "rest"
+
+
+def recommend_movements(
+    user: User, *, fatigue_threshold: float = 100.0
+) -> List[Movement]:
+    """Return movement patterns suitable for the next session.
+
+    The movements are sorted from least to most fatigued and filtered using the
+    provided ``fatigue_threshold``.
+    """
+    user.recovery.decay(datetime.utcnow())
+    scored = sorted(
+        [(m, user.recovery.scores.get(m, 0.0)) for m in Movement],
+        key=lambda t: t[1],
+    )
+    return [m for m, score in scored if score <= fatigue_threshold]

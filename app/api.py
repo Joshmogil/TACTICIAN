@@ -7,7 +7,7 @@ from fastapi import APIRouter
 
 from app.models import User
 from app.recovery import update_recovery
-from app.recommendation import recommend_workout
+from app.recommendation import recommend_workout, recommend_movements
 from workout import Workout
 
 router = APIRouter()
@@ -42,3 +42,11 @@ def workout_recommendations(user_id: str):
     user = get_user(user_id)
     recs = recommend_workout(user)
     return {"recommendations": recs}
+
+
+@router.get("/users/{user_id}/snapshot")
+def recovery_snapshot(user_id: str):
+    """Return recovery scores and suggested movement patterns."""
+    user = get_user(user_id)
+    movements = [m.value for m in recommend_movements(user)]
+    return {"recovery": user.recovery.scores, "recommended_movements": movements}
