@@ -82,6 +82,8 @@ class CardioSession(BaseModel):
 # discriminated union for runtime parsing
 WorkDone = Union[WeightedSet, CardioSession]
 
+
+
 from collections import defaultdict
 from typing import Iterable, Dict
 

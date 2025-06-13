@@ -23,5 +23,6 @@ def load_exercises(directory: str = "exercises") -> Dict[str, dict]:
 if __name__ == "__main__":
     loaded = load_exercises()
     print(f"Loaded {len(loaded)} exercises")
-    for name in list(loaded)[:5]:
+    for name in list(loaded):
         print("-", name)
+        print(loaded[name])

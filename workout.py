@@ -65,6 +65,10 @@ def load_workout_data(directory="_Workouts"):
 # Load all workout files
 workouts = load_workout_data()
 
+
+
+
+
 # Example: Access a specific workout by name
 # If you have a file "_Workouts/Running_Log.csv", access it with:
 # running_df = workouts["Running_Log"] 
