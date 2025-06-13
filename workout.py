@@ -1,23 +1,40 @@
 import datetime as dt
 import os
 import re
-from typing import List
+from typing import Dict, List
+from collections import defaultdict
 
 import pandas as pd
 from pydantic import BaseModel
 
-from core import CardioSession, Movement, PercievedExertion, WeightedSet, WorkDone
+from core import (
+    CardioSession,
+    Movement,
+    PercievedExertion,
+    WeightedSet,
+    WorkDone,
+    aggregate_workload,
+)
 from load_exercises import load_exercises
 import datetime
 
+
 class Workout(BaseModel):
     date: dt.date
+    user_id: str = "default"
     work_done: List[WorkDone]
+
+    @property
+    def totals(self) -> Dict[Movement, float]:
+        return aggregate_workload(self.work_done)
+
+
+WORKOUT_HISTORY: Dict[str, List[Workout]] = defaultdict(list)
+
 
 def _parse_date(date_str):
     """Convert date string like '6-9-2025' to datetime.date object"""
     try:
-        # Parse the date string with month-day-year format
         return datetime.datetime.strptime(date_str, "%m-%d-%Y").date()
     except ValueError:
         print(f"Error parsing date: {date_str}")
@@ -25,12 +42,10 @@ def _parse_date(date_str):
 
 
 def _canon(name: str) -> str:
-    """Return a normalised key for exercise lookups."""
     return re.sub(r"[^a-z]", "", name.lower())
 
 
 def _parse_number(val) -> float:
-    """Extract a float from a messy cell value."""
     if pd.isna(val):
         return 0.0
     m = re.search(r"[-+]?(\d*\.?\d+)", str(val))
@@ -49,12 +64,9 @@ def _parse_pe(val) -> PercievedExertion:
     return PercievedExertion(n)
 
 
-def df_to_workout(date: datetime.date, df: pd.DataFrame) -> Workout:
-    """Convert a raw workout CSV ``DataFrame`` into a ``Workout`` model."""
-
+def df_to_workout(date: datetime.date, df: pd.DataFrame, user_id: str = "default") -> Workout:
     exercises = load_exercises()
     lookup = {_canon(k): k for k in exercises}
-    # manual typo corrections
     lookup["windshieldwhipers"] = "Windshield Wipers"
 
     work_items: List[WorkDone] = []
@@ -65,7 +77,6 @@ def df_to_workout(date: datetime.date, df: pd.DataFrame) -> Workout:
         if isinstance(raw_name, str) and raw_name.strip():
             current_ex = raw_name.strip()
         elif current_ex is None:
-            # nothing to propagate
             continue
 
         if current_ex is None:
@@ -73,7 +84,6 @@ def df_to_workout(date: datetime.date, df: pd.DataFrame) -> Workout:
 
         canon = _canon(current_ex)
         if canon not in lookup:
-            # unknown exercise, skip row
             continue
         ex_name = lookup[canon]
         ex_info = exercises[ex_name]
@@ -101,53 +111,37 @@ def df_to_workout(date: datetime.date, df: pd.DataFrame) -> Workout:
                 ac_reps=_parse_int(row.get("actual")),
                 pe=pe,
             )
-
         work_items.append(item)
 
-    return Workout(date=date, work_done=work_items)
+    workout = Workout(date=date, user_id=user_id, work_done=work_items)
+    WORKOUT_HISTORY[user_id].append(workout)
+    return workout
 
 
-def load_workout_data(directory="_Workouts"):
-    """
-    Load all CSV files from the specified directory into pandas DataFrames
-
-    Args:
-        directory (str): Path to the directory containing workout files
-
-    Returns:
-        dict: Dictionary mapping filenames to pandas DataFrames
-    """
+def load_workout_data(directory="_Workouts", user_id: str = "default"):
     workout_data = {}
 
-    # Check if directory exists
     if not os.path.exists(directory):
         print(f"Directory '{directory}' not found.")
         return workout_data
 
-    # List all files in directory
     files = os.listdir(directory)
-
-    # Filter for CSV files
     csv_files = [f for f in files if f.endswith(".csv")]
 
     if not csv_files:
         print(f"No CSV files found in '{directory}'.")
         return workout_data
 
-    # Read each CSV file into a DataFrame
     for file in csv_files:
         file_path = os.path.join(directory, file)
         try:
-            # Read the CSV file
             df = pd.read_csv(file_path)
-
-            # Store DataFrame with filename (without extension) as key
             filename = os.path.splitext(file)[0]
             workout_data[filename] = df_to_workout(
                 date=_parse_date(filename),
-                df=df
-                )
-
+                df=df,
+                user_id=user_id,
+            )
             print(f"Loaded: {filename} ({len(df)} rows)")
         except Exception as e:
             print(f"Error loading {file}: {str(e)}")
@@ -155,15 +149,9 @@ def load_workout_data(directory="_Workouts"):
     return workout_data
 
 
-# Load all workout files
 workouts = load_workout_data()
 
-
-# Example: Access a specific workout by name
-# If you have a file "_Workouts/Running_Log.csv", access it with:
-# running_df = workouts["Running_Log"]
-
-# Example: Process all workouts
-for name, item in workouts.items():
-    print(f"\nWorkout: {name}")
-    print(item)
+if __name__ == "__main__":
+    for name, item in workouts.items():
+        print(f"\nWorkout: {name}")
+        print(item)
