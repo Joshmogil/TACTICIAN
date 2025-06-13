@@ -28,3 +28,5 @@ Developing recommendation logic that suggests appropriate exercises based on rec
 Exposing functionality through a FastAPI interface
 Persisting data for long-term tracking and analysis
 This system goes beyond simple workout logging to create a comprehensive training management system that applies exercise science principles to optimize training outcomes.
+
+DO NOT TOUCH sync_drive.py or _Workouts.py
