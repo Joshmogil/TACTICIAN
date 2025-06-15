@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from math import ceil
 from typing import DefaultDict, Dict, List, Union
 
-from app.models import User
+from app.models import User, ExperienceLevel
 from core import (
     CardioSession,
     Exercise,
@@ -41,6 +41,67 @@ TARGET_FATIGUE: Dict[Movement, float] = {
     Movement.UPPER_PLYO: 80.0,
     Movement.CARDIO: 80.0,
 }
+
+
+EXPERIENCE_FACTORS: Dict[ExperienceLevel, float] = {
+    ExperienceLevel.BEGINNER: 0.75,
+    ExperienceLevel.INTERMEDIATE: 1.0,
+    ExperienceLevel.ADVANCED: 1.25,
+}
+
+
+def weekly_fatigue_targets(user: User) -> Dict[Movement, float]:
+    """Return weekly fatigue targets scaled by experience level."""
+    factor = EXPERIENCE_FACTORS.get(user.experience, 1.0)
+    return {m: target * factor for m, target in TARGET_FATIGUE.items()}
+
+
+DAYS_OF_WEEK = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+]
+
+
+def estimate_sessions_per_week(user: User, weeks: int = 4, default: int = 3) -> int:
+    """Estimate training frequency from history or user setting."""
+    if user.workouts_per_week:
+        return user.workouts_per_week
+
+    if not user.workouts:
+        return default
+
+    cutoff = datetime.utcnow() - timedelta(days=7 * weeks)
+    weekly_counts: DefaultDict[int, int] = defaultdict(int)
+    for w in user.workouts:
+        if w.date < cutoff:
+            continue
+        week = w.date.isocalendar()[1]
+        weekly_counts[week] += 1
+    if not weekly_counts:
+        return default
+    return int(round(sum(weekly_counts.values()) / len(weekly_counts)))
+
+
+def suggest_weekly_movements(
+    user: User, workouts_per_week: int | None = None
+) -> Dict[str, List[Movement]]:
+    """Suggest movements for each day of the week."""
+    sessions = workouts_per_week or estimate_sessions_per_week(user)
+    sessions = max(1, min(7, sessions))
+    allowed = user.allowed_movements or list(Movement)
+
+    schedule: Dict[str, List[Movement]] = {day: [] for day in DAYS_OF_WEEK}
+    idx = 0
+    for movement in allowed:
+        day = DAYS_OF_WEEK[idx % sessions]
+        schedule[day].append(movement)
+        idx += 1
+    return schedule
 
 
 def _build_plan(user: User, name: str, *, window: int = 3) -> Dict[str, object]:
@@ -117,8 +178,9 @@ def recommend_workout(
 
     The function looks at the user's recovery scores and recent history to
     propose single sets (or cardio blocks) that gradually build fatigue toward
-    ``TARGET_FATIGUE``. Sets are added only until the target for a movement is
-    reached so recommendations don't overshoot the desired workload.
+    the user's weekly fatigue targets. Sets are added only until the target for
+    a movement is reached so recommendations don't overshoot the desired
+    workload.
     """
     now = datetime.utcnow()
     user.recovery.decay(now)
@@ -133,7 +195,11 @@ def recommend_workout(
         [(m, user.recovery.scores.get(m, 0.0)) for m in Movement],
         key=lambda t: t[1],
     )
-    allowed_movements = [m for m, score in movements if m not in fatigued]
+    allowed_movements = [
+        m
+        for m, score in movements
+        if m not in fatigued and m in (user.allowed_movements or list(Movement))
+    ]
 
     if not allowed_movements:
         return "rest"
@@ -169,14 +235,8 @@ def recommend_workout(
                 stats = history[item.exercise_name]
                 stats["workload"] += item.workload
                 stats["count"] += 1
-                duration = (
-                    item.ac_duration if item.ac_duration else item.ex_duration
-                )
-                hr = (
-                    item.ac_heart_rate
-                    if item.ac_heart_rate
-                    else item.ex_heart_rate
-                )
+                duration = item.ac_duration if item.ac_duration else item.ex_duration
+                hr = item.ac_heart_rate if item.ac_heart_rate else item.ex_heart_rate
                 stats["duration_total"] += duration
                 stats["hr_total"] += hr
                 session_counter[item.exercise_name] += 1
@@ -203,9 +263,7 @@ def recommend_workout(
             except Exception:
                 continue
         try:
-            ex_obj = Exercise(
-                name=ex["name"], movement=movement, muscles=muscles
-            )
+            ex_obj = Exercise(name=ex["name"], movement=movement, muscles=muscles)
         except Exception:
             continue
 
@@ -254,12 +312,14 @@ def recommend_workout(
     allocated: DefaultDict[Movement, float] = defaultdict(float)
     recommendations: List[Dict[str, Union[str, float, int]]] = []
 
+    targets = weekly_fatigue_targets(user)
+
     for plan in scored:
         if len(recommendations) >= max_exercises:
             break
 
         movement: Movement = plan["movement"]  # type: ignore[assignment]
-        target = TARGET_FATIGUE.get(movement, fatigue_threshold)
+        target = targets.get(movement, fatigue_threshold)
         current = user.recovery.scores.get(movement, 0.0) + allocated[movement]
         needed = target - current
         if needed <= 0 or not plan["avg_work"]:
