@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from typing import TYPE_CHECKING, Dict, List, Optional
+from enum import Enum
 
 from pydantic import BaseModel
 
@@ -24,6 +25,12 @@ from core import (
     aggregate_workload,
 )
 from load_exercises import load_exercises
+
+
+class ExperienceLevel(str, Enum):
+    BEGINNER = "beginner"
+    INTERMEDIATE = "intermediate"
+    ADVANCED = "advanced"
 
 
 class RecoveryState(BaseModel):
@@ -98,6 +105,9 @@ class RecoveryState(BaseModel):
 class User(BaseModel):
     id: str
     name: str
+    experience: ExperienceLevel = ExperienceLevel.BEGINNER
+    allowed_movements: List[Movement] = list(Movement)
+    workouts_per_week: Optional[int] = None
     default_bodyweight: float = DEFAULT_BODYWEIGHT
     recovery: RecoveryState = RecoveryState()
     workouts: List["WorkoutRecord"] = []
