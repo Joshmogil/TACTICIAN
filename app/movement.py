@@ -1,12 +1,17 @@
 from pydantic import BaseModel
 from enum import Enum
 import datetime as dt
-from typing import List
+from typing import List, Union
 
 class UserMovement(BaseModel):
     name: str
+    fatigue_schedule: 'FatigueSchedule'
     current_fatigue: float = 0
-    current_capacity: float = 0
+    
+    est_daily_recovery: float
+    est_daily_capacity: float
+    est_monthly_capacity: float
+
     
 class FatigueSchedule:
     movement: 'Movement'
@@ -14,13 +19,12 @@ class FatigueSchedule:
     week_targs: List['FatigueTarget'] #TODO: list should be 4-5 in length
     month_targs: List['FatigueTarget'] #TODO: list should be 3 in length
     quarter_targs: List['FatigueTarget'] #TODO: list should be 4 in length
-    yearly_target: 'FatigueTarget' 
 
 class FatigueTarget:
-    date: dt.date
+    date_start: dt.date
+    date_end: Union[dt.date, None] 
     target: float
     
-
 class Movement(Enum):
     LOWER_PULL = "lower_pull"
     LOWER_PUSH = "lower_push"
