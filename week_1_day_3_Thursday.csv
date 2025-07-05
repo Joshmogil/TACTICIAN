@@ -1,0 +1,19 @@
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
+Dynamic Warm-up,5.0,5.0,min,0.0,0.0,None,Low
+Dumbbell Overhead Press,12.0,12.0,reps,20.0,0.0,lbs,Medium
+Dumbbell Overhead Press,10.0,10.0,reps,25.0,0.0,lbs,Medium
+Dumbbell Overhead Press,8.0,8.0,reps,30.0,0.0,lbs,High
+Dumbbell Row,10.0,10.0,reps,30.0,0.0,lbs,Medium
+Dumbbell Row,10.0,10.0,reps,35.0,0.0,lbs,Medium
+Dumbbell Row,8.0,8.0,reps,40.0,0.0,lbs,High
+Push-up,15.0,15.0,reps,0.0,0.0,None,Medium
+Push-up,12.0,12.0,reps,0.0,0.0,None,Medium
+Push-up,10.0,10.0,reps,0.0,0.0,None,High
+Farmer's Carry,40.0,40.0,meters,40.0,0.0,lbs,Medium
+Farmer's Carry,40.0,40.0,meters,45.0,0.0,lbs,Medium
+Farmer's Carry,30.0,30.0,meters,50.0,0.0,lbs,High
+Dumbbell Bicep Curl,15.0,15.0,reps,15.0,0.0,lbs,Medium
+Dumbbell Bicep Curl,12.0,12.0,reps,20.0,0.0,lbs,High
+Dumbbell Tricep Extension,15.0,15.0,reps,20.0,0.0,lbs,Medium
+Dumbbell Tricep Extension,12.0,12.0,reps,25.0,0.0,lbs,High
+Cool-down Stretch,5.0,5.0,min,0.0,0.0,None,Low

@@ -1,0 +1,16 @@
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
+Dynamic Warm-up,5.0,5.0,min,0.0,0.0,None,Low
+Dumbbell Bench Press,12.0,12.0,reps,30.0,0.0,lbs,Medium
+Dumbbell Bench Press,10.0,10.0,reps,35.0,0.0,lbs,Medium
+Dumbbell Bench Press,8.0,8.0,reps,40.0,0.0,lbs,High
+Dumbbell Lunge,10.0,10.0,reps,20.0,0.0,lbs,Medium
+Dumbbell Lunge,10.0,10.0,reps,25.0,0.0,lbs,Medium
+Dumbbell Lunge,8.0,8.0,reps,30.0,0.0,lbs,High
+Dumbbell Curl and Press,12.0,12.0,reps,15.0,0.0,lbs,Medium
+Dumbbell Curl and Press,10.0,10.0,reps,20.0,0.0,lbs,Medium
+Dumbbell Curl and Press,8.0,8.0,reps,25.0,0.0,lbs,High
+Goblet Squat,15.0,15.0,reps,30.0,0.0,lbs,Medium
+Goblet Squat,12.0,12.0,reps,35.0,0.0,lbs,Medium
+Goblet Squat,10.0,10.0,reps,40.0,0.0,lbs,High
+Stair Climber,25.0,25.0,min,140.0,0.0,bpm,Medium
+Cool-down Stretch,5.0,5.0,min,0.0,0.0,None,Low

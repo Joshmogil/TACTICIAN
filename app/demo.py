@@ -1,0 +1,77 @@
+import argparse
+import json
+from app.ai.first_week import generate_raw_week, parse_workouts
+from app.ai.progress_week import progress_day
+from app.workout import WorkoutDay
+from app.user import User, Interest, Range
+import pandas as pd
+
+josh = User(
+    interests=[
+            Interest(name="cardio", skill="Novice"),
+            Interest(
+                name="lifting weights",
+                skill="Intermediate"
+                ),
+            Interest(
+                name="functional strength training",
+                skill="Intermediate"
+                ),
+            Interest(
+                name="stretching",
+                skill="Intermediate"
+                )
+    ],
+    desired_workouts_per_week=Range(start=4, end=5),
+    favorite_exercises=[
+        "jogging",
+        "dumbbell benchpress",
+        "curl and press",
+        "dumbbell lunge",
+        "stair climber"
+    ],
+    age="27",
+    activity_level=2,
+    gender="male",
+    name="Josh"
+)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--mode", choices=["base", "next"], required=True, help="Mode: base or next")
+    parser.add_argument("--week-num", type=int, default=0, help="Week number for next mode")
+    parser.add_argument("--convert-to-csv", action="store_true", help="Convert output to CSV")
+    args = parser.parse_args()
+
+    if args.mode == "base":
+        raw_week = generate_raw_week(josh)
+        days = parse_workouts(raw_week)
+        with open("week_1.json", "w") as f:
+            json.dump([d.model_dump() for d in days], f, indent=2)
+        if args.convert_to_csv:
+            for i, d in enumerate(days):
+                df = d.workout_df()
+                df.to_csv(f"week_1_day_{i+1}_{d.day}.csv", index=False)
+
+    elif args.mode == "next":
+        week_num = args.week_num
+        with open(f"week_{week_num}.json", "r") as f:
+            week = json.load(f)
+        week = [WorkoutDay(**obj) for obj in week]
+
+        parsed_workouts = []
+        for workout in week:
+            w = progress_day(user=josh, workout=workout, week_goal="Increase")
+            print(w)
+            p = parse_workouts(w)
+            parsed_workouts.append(p[0])
+
+        with open(f"week_{week_num+1}.json", "w") as f:
+            json.dump([d.model_dump() for d in parsed_workouts], f, indent=2)
+        if args.convert_to_csv:
+            for i, d in enumerate(parsed_workouts):
+                df = d.workout_df()
+                df.to_csv(f"week_{week_num+1}_day_{i+1}_{d.day}.csv", index=False)
+
+if __name__ == "__main__":
+    main()
