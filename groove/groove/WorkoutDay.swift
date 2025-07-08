@@ -26,14 +26,15 @@ struct WorkoutDay: Codable, Identifiable {
 
 struct ExerciseSet: Codable, Hashable, Identifiable {
     var id: UUID = UUID()
-    let exercise: String
-    let amount: Double
-    let actualAmount: Double
-    let amountUnit: String
-    let intensity: Double
-    let actualIntensity: Double
-    let intensityUnit: String
-    let perceivedExertion: String
+    
+    var exercise: String
+    var amount: Double
+    var actualAmount: Double
+    var amountUnit: String
+    var intensity: Double
+    var actualIntensity: Double
+    var intensityUnit: String
+    var perceivedExertion: String
 
     private enum CodingKeys: String, CodingKey {
         case exercise, amount, actualAmount, amountUnit,
