@@ -27,13 +27,19 @@ struct Interest: Identifiable, Codable, Hashable {
         self.skill = try container.decode(String.self, forKey: .skill)
         self.id = UUID()
     }
+    
+    init(name: String, skill: String) {
+        self.id = UUID()
+        self.name = name
+        self.skill = skill
+    }
 }
 
 struct UserProfile: Codable {
     var name: String
-    var age: String
+    var age: Int
     var gender: String
-    var activityLevel: Int
+    var activityLevel: String
     var desiredWorkoutsPerWeek: Range
     var favoriteExercises: [String]
     var interests: [Interest]
