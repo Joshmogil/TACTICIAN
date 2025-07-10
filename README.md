@@ -1,10 +1,22 @@
-# Fitness Tracking API
+# TACTICIAN
 
-This repository contains a small FastAPI application for tracking workouts and estimating recovery.
+This repository contains two related projects:
+
+- **FastAPI backend** under `app/` for generating workout plans, authenticating
+  users and storing workout history.  Several utilities in `app/ai/` use
+  Google\'s generative models to create and adjust weekly workout plans.
+- **groove** iOS application under `groove/` built with SwiftUI that displays a
+  user\'s weekly workout schedule from JSON files.
+
+Example workout weeks are stored in the root of the repository as CSV/JSON
+files.
+
+## Requirements
+
+- Python 3.11+
+- The packages listed in `requirements.txt`
 
 ## Setup
-
-1. Create a virtual environment and install dependencies:
 
 ```bash
 python -m venv venv
@@ -14,48 +26,42 @@ pip install -r requirements.txt
 
 ## Running the API
 
-The API is defined in `app.main`. When the server starts it loads all CSV files in the `_Workouts/` directory for a default user named **Josh**. The helper `load_user_history` parses these files and updates Josh's recovery state so recommendations immediately reflect his recent training. Exercises are populated from the YAML files in `exercises/`.
-
-Start the server with:
+Launch the FastAPI server with:
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.app:app --reload
 ```
 
-Once running, open <http://localhost:8000/docs> to explore the endpoints.
+The interactive documentation will be available at
+`http://localhost:8000/docs` once the server starts.
 
-## Loading Exercises Manually
+## Docker
 
-You can inspect the exercise library by running:
+A `Dockerfile` is provided for container based deployments:
 
 ```bash
-python load_exercises.py
+docker build -t tactician .
+docker run -p 8080:8080 tactician
 ```
 
-## Tests
+## fly.io Deployment
 
-Run the unit tests with:
+The repository includes a sample `fly.toml` for deploying the API to Fly.io.
+After installing `flyctl` you can deploy with:
 
 ```bash
-pytest
+fly launch --no-deploy  # creates the app
+fly deploy              # builds the Dockerfile and deploys
 ```
 
-## Project Structure
+## Project Layout
 
 ```
 .
-├── app/
-│   ├── __init__.py
-│   ├── api.py
-│   ├── main.py
-│   ├── models.py
-│   ├── recommendation.py
-│   └── recovery.py
-├── core.py
-├── exercises/           # YAML exercise definitions
-├── _Workouts/           # sample workout CSVs
-├── workout.py
-├── load_exercises.py
+├── app/                 # FastAPI application and AI helpers
+├── groove/              # SwiftUI client app
+├── Dockerfile           # container build for the API
+├── fly.toml             # Fly.io configuration
 ├── requirements.txt
-└── tests/
+└── week_1*.csv / json   # example workout weeks
 ```
