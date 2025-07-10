@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     GOOGLE_CLIENT_ID: str = "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
     GEMINI_API_KEY: str = 'top_secret-api_key'
-    TEST_USER_PASS: str 
+    TEST_USER_PASS: str = 'super-duper-secret'
 
 
     class Config:
