@@ -48,7 +48,7 @@ class User(BaseModel):
     name: str
     gender: str
     interests: list[Interest]
-    desired_workouts_per_week: Range
+
     favorite_exercises: list[str]
     age: int 
     activity_level: int # 1-3

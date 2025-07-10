@@ -74,8 +74,9 @@ Monday:
 # Make sure to adjust the intensity of exercises appropriately for the age, gender, and skill level
 # 
 """
-        
-    
+
+class WorkoutWeek(BaseModel):
+    content : List[WorkoutDay]
 
 if __name__ == "__main__":
 
