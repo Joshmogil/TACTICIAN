@@ -8,9 +8,11 @@ from app.auth import (
     create_access_token,
     get_current_user,
     verify_google_token,
-    Token
+    Token,
 )
-from app.user import User, test_users# Assuming you have a user model
+from app.user import User, test_users  # Assuming you have a user model
+from app.routes.user import router as user_router
+from app.routes.workout import router as workout_router
 
 from tortoise import Tortoise
 
@@ -41,6 +43,10 @@ async def lifespan(app: FastAPI):
 
 # Pass the lifespan handler to the FastAPI app
 app = FastAPI(lifespan=lifespan)
+
+# Register API routers
+app.include_router(user_router)
+app.include_router(workout_router)
 
 class ProviderToken(BaseModel):
     token: str
