@@ -4,7 +4,7 @@ from typing import Optional
 from tortoise.exceptions import DoesNotExist
 
 from app.db import models
-from app.user import User as UserInfo
+from app.user import UserInfo
 
 
 async def create_user(email: str, info: UserInfo) -> models.User:

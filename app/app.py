@@ -10,9 +10,10 @@ from app.auth import (
     verify_google_token,
     Token,
 )
-from app.user import User, test_users  # Assuming you have a user model
+from app.user import UserInfo, test_users  # Assuming you have a user model
 from app.routes.user import router as user_router
 from app.routes.workout import router as workout_router
+from app.db.models import User
 
 from tortoise import Tortoise
 
@@ -69,7 +70,7 @@ async def login_with_google(provider_token: ProviderToken):
     return {"access_token": access_token, "token_type": "bearer"}
 
 # Example of a protected endpoint
-@app.get("/users/me", response_model=User)
+@app.get("/users/me", response_model=UserInfo)
 async def read_users_me(current_user: User = Depends(get_current_user)):
     # In a real app, you'd return the full user object from the DB
     # For now, we just return the email from the token

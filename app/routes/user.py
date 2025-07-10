@@ -1,10 +1,16 @@
 from uuid import UUID
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel, EmailStr
 
-from app.db import user as user_db
-from app.user import User as UserInfo
+from app.auth import (
+    get_current_user
+)
+
+
+from app.user import UserInfo
+from app.db.models import User
+import app.db.user as user_db
 
 
 class UserCreate(BaseModel):
@@ -29,27 +35,27 @@ class UserOut(UserCreate):
 router = APIRouter(prefix="/users", tags=["users"])
 
 
-@router.post("/", response_model=UserOut)
-async def create_user(payload: UserCreate) -> UserOut:
-    """Create a new user profile."""
+#@router.post("/", response_model=UserOut)
+#async def create_user(payload: UserCreate) -> UserOut:
+#    """Create a new user profile."""
+#
+#    user = await user_db.create_user(email=payload.email, info=payload.info)
+#    return UserOut(id=user.id, email=user.email, info=payload.info)
 
-    user = await user_db.create_user(email=payload.email, info=payload.info)
-    return UserOut(id=user.id, email=user.email, info=payload.info)
 
-
-@router.get("/{email}", response_model=UserOut)
-async def read_user(email: EmailStr) -> UserOut:
+@router.get("/", response_model=UserOut)
+async def read_user(current_user: User = Depends(get_current_user)) -> UserOut:
     """Retrieve a user by email."""
 
-    user = await user_db.get_user_by_email(email)
+    user = await user_db.get_user_by_email(current_user)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
-    return UserOut(id=user.id, email=user.email, info=UserInfo(**user.info))
+    return UserOut(id=user.id, email=user.email, info=User(**user.info))
 
 
-@router.put("/{user_id}", response_model=UserOut)
-async def update_user(user_id: UUID, payload: UserUpdate) -> UserOut:
+@router.put("/", response_model=UserOut)
+async def update_user(payload: UserUpdate, current_user: User = Depends(get_current_user)) -> UserOut:
     """Update the profile for an existing user."""
 
     updated = await user_db.update_user_profile(user_id, payload.info)

@@ -11,6 +11,8 @@ from pydantic_settings import BaseSettings
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
+from app.db.user import get_user_by_email
+
 # --- Configuration ---
 class Settings(BaseSettings):
     SECRET_KEY: str = "a_very_secret_key_that_should_be_in_a_env_file"
@@ -63,11 +65,11 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
         token_data = TokenData(email=email)
     except JWTError:
         raise credentials_exception
-    # Here you would fetch the user from your database
-    # user = get_user_from_db(email=token_data.email)
-    # if user is None:
-    #     raise credentials_exception
-    return token_data # In a real app, return the full user object
+    #Here you would fetch the user from your database
+    user = await get_user_by_email(email=token_data.email)
+    if user is None:
+        raise credentials_exception
+    return user # In a real app, return the full user object
 
 # --- Google Token Verification ---
 def verify_google_token(token: str) -> Optional[dict]:

@@ -44,7 +44,7 @@ def interests_prompt(interests: list['Interest']):
             r = r + f"and {interest.name} ({interest.skill}) "
     return r 
 
-class User(BaseModel):
+class UserInfo(BaseModel):
     name: str
     gender: str
     interests: list[Interest]
@@ -65,7 +65,7 @@ This user is {self.age} years old and has a {activity_semantic(self.activity_lev
 """
         return rep
 test_users={
-"josh":User(
+"josh":UserInfo(
         interests=[
             Interest(name="running", skill="Novice"),
             Interest(
@@ -94,7 +94,7 @@ test_users={
         name="Josh"
     ),
 
-"veronica":User(
+"veronica":UserInfo(
         interests=[
             Interest(name="running", skill="Novice"),
             Interest(
@@ -115,7 +115,7 @@ test_users={
         name="Veronica"
     ),
 
-"spencer":User(
+"spencer":UserInfo(
         interests=[
             Interest(name="Running", skill="Advanced"),
             Interest(

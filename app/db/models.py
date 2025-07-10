@@ -1,14 +1,14 @@
 from tortoise.models import Model
 from tortoise import fields
 
-from app import user
+from app.user import UserInfo
 from app.workout import WorkoutWeek
 
 
 class User(Model):
     id = fields.UUIDField(pk=True)
     email = fields.CharField(max_length=200, unique=True)
-    info = fields.JSONField(field_type=user.User)
+    info = fields.JSONField(field_type=UserInfo)
 
 
 class WorkoutChunk(Model):

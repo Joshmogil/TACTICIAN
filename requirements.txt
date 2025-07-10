@@ -12,7 +12,9 @@ charset-normalizer==3.4.2
 click==8.2.1
 coverage==7.9.1
 cryptography==45.0.4
+dnspython==2.7.0
 ecdsa==0.19.1
+email_validator==2.2.0
 fastapi==0.104.1
 google-auth==2.40.3
 google-genai==1.24.0
