@@ -10,9 +10,12 @@ from app.auth import (
     verify_google_token,
     Token
 )
-from app.user import User # Assuming you have a user model
+from app.user import User, test_users# Assuming you have a user model
 
 from tortoise import Tortoise
+
+TEST_USER = test_users['josh']
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

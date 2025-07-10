@@ -5,8 +5,6 @@ from app import user
 from app.workout import WorkoutWeek
 
 
-
-
 class User(Model):
     id = fields.UUIDField(pk=True)
     email = fields.CharField(max_length=200, unique=True)
