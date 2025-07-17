@@ -1,0 +1,972 @@
+[
+  {
+    "day": "Monday",
+    "workout": [
+      {
+        "exercise": "Dynamic Warm-up",
+        "amount": 5.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Low"
+      },
+      {
+        "exercise": "Dumbbell Bench Press",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Bench Press",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 40.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Bench Press",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Bench Press",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Lunge",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Lunge",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Lunge",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Lunge",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Curl and Press",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 20.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Curl and Press",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Curl and Press",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Goblet Squat",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Goblet Squat",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 40.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Goblet Squat",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Push-up",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Push-up",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Push-up",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Stair Climber",
+        "amount": 30.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 150.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "bpm",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Cool-down Stretch",
+        "amount": 7.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Low"
+      }
+    ]
+  },
+  {
+    "day": "Tuesday",
+    "workout": [
+      {
+        "exercise": "Dynamic Warm-up",
+        "amount": 5.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Low"
+      },
+      {
+        "exercise": "Jogging",
+        "amount": 40.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 150.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "bpm",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Plank",
+        "amount": 60.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Plank",
+        "amount": 75.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Plank",
+        "amount": 75.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Side Plank",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Side Plank",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Russian Twists",
+        "amount": 20.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 15.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Russian Twists",
+        "amount": 20.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 15.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Russian Twists",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 20.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Bird-Dog",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Bird-Dog",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Bird-Dog",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Hamstring Stretch",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Quad Stretch",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Hip Flexor Stretch",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Calf Stretch",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Glute Stretch",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Chest Stretch",
+        "amount": 30.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Tricep Stretch",
+        "amount": 30.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      }
+    ]
+  },
+  {
+    "day": "Thursday",
+    "workout": [
+      {
+        "exercise": "Dynamic Warm-up",
+        "amount": 5.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Low"
+      },
+      {
+        "exercise": "Dumbbell Overhead Press",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Overhead Press",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Overhead Press",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Lat Pulldown",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 80.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Lat Pulldown",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 90.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Lat Pulldown",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 100.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Lat Pulldown",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 100.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Row",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Row",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 40.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Row",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Face Pulls",
+        "amount": 20.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Face Pulls",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Face Pulls",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Lateral Raise",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 15.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Lateral Raise",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 20.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Lateral Raise",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Shrugs",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 50.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Shrugs",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 55.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Shrugs",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 60.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Farmer's Carry",
+        "amount": 50.0,
+        "actual_amount": 0.0,
+        "amount_unit": "meters",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Farmer's Carry",
+        "amount": 40.0,
+        "actual_amount": 0.0,
+        "amount_unit": "meters",
+        "intensity": 50.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Farmer's Carry",
+        "amount": 30.0,
+        "actual_amount": 0.0,
+        "amount_unit": "meters",
+        "intensity": 55.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Bicep Curl",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 20.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Bicep Curl",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Bicep Curl",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Tricep Extension",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Tricep Extension",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Tricep Extension",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Cool-down Stretch",
+        "amount": 7.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Low"
+      }
+    ]
+  },
+  {
+    "day": "Saturday",
+    "workout": [
+      {
+        "exercise": "Dynamic Warm-up",
+        "amount": 5.0,
+        "actual_amount": 0.0,
+        "amount_unit": "min",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Low"
+      },
+      {
+        "exercise": "Dumbbell Romanian Deadlift",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Romanian Deadlift",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 40.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Romanian Deadlift",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Romanian Deadlift",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Box Step-up",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 20.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Box Step-up",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Box Step-up",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Dumbbell Sumo Squat",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 40.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Sumo Squat",
+        "amount": 10.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 45.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Dumbbell Sumo Squat",
+        "amount": 8.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 50.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Standing Calf Raise",
+        "amount": 20.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 15.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Standing Calf Raise",
+        "amount": 20.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 20.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Standing Calf Raise",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 25.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Glute Bridge",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 30.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Glute Bridge",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 35.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Glute Bridge",
+        "amount": 12.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 40.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "lbs",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Lying Leg Raise",
+        "amount": 20.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Lying Leg Raise",
+        "amount": 20.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Lying Leg Raise",
+        "amount": 15.0,
+        "actual_amount": 0.0,
+        "amount_unit": "reps",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "High"
+      },
+      {
+        "exercise": "Pigeon Pose",
+        "amount": 60.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Butterfly Stretch",
+        "amount": 60.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Seated Forward Fold",
+        "amount": 60.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Couch Stretch",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      },
+      {
+        "exercise": "Wall Calf Stretch",
+        "amount": 45.0,
+        "actual_amount": 0.0,
+        "amount_unit": "seconds",
+        "intensity": 0.0,
+        "actual_intensity": 0.0,
+        "intensity_unit": "None",
+        "perceived_exertion": "Medium"
+      }
+    ]
+  }
+]

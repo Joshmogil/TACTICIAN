@@ -1,7 +1,7 @@
 from google import genai
 import dotenv
 from app.workout import WorkoutDay, WorkDone
-from app.user import User, test_users, interests_prompt
+from app.user import UserInfo, test_users, interests_prompt
 from app.test import USER
 from app.ai.tools import parse_workouts
 from typing import List
@@ -10,7 +10,7 @@ dotenv.load_dotenv()
 
 # The client gets the API key from the environment variable `GEMINI_API_KEY`.
 
-def generate_raw_week(user: User):
+def generate_raw_week(user: UserInfo):
     client = genai.Client()
 
     response = client.models.generate_content(

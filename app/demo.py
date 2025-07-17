@@ -1,12 +1,12 @@
 import argparse
 import json
 from app.ai.first_week import generate_raw_week, parse_workouts
-from app.ai.progress_week import progress_day
-from app.workout import WorkoutDay
-from app.user import User, Interest, Range
+from app.ai.progress_week import progress_day, progress_week
+from app.workout import WorkoutDay, WorkoutWeek
+from app.user import UserInfo, Interest, Range, UserFeedback
 import pandas as pd
 
-josh = User(
+josh = UserInfo(
     interests=[
             Interest(name="cardio", skill="Novice"),
             Interest(
@@ -28,12 +28,54 @@ josh = User(
         "dumbbell benchpress",
         "curl and press",
         "dumbbell lunge",
-        "stair climber"
+        "stair climber",
+        "pull ups",
+        "lat pulldown"
     ],
     age="27",
     activity_level=2,
     gender="male",
     name="Josh"
+)
+
+josh_feedback=UserFeedback(
+    biceps = "Just right",
+    triceps = "Just right",
+    forearms = "Just right",
+    hands = "Just right",
+    rear_deltoids = "Not enough",
+    middle_deltoids = "Not enough",
+    front_deltoids = "Just right",
+    upper_chest = "Just right",
+    chest = "Just right",
+    traps = "Not enough",
+    upper_back = "Not enough",
+    lats = "Not enough",
+    abs = "Just right",
+    obliques = "Just right",
+    lower_back = "Just right",
+    glutes = "Just right",
+    hamstrings = "Just right",
+    quads = "Just right",
+    calves = "Just right",
+
+    interest_reports={
+        "lifting weights":[
+            "More difficulty",
+            "More volume",
+        ],
+        "stretching":[
+            "More often",
+        ],
+        "functional strength training":[
+            "More volume",
+        ],
+        "cardio":[
+            "More exercise variety",
+            "More often",
+        ]
+    }
+
 )
 
 def main():
@@ -58,13 +100,16 @@ def main():
         with open(f"week_{week_num}.json", "r") as f:
             week = json.load(f)
         week = [WorkoutDay(**obj) for obj in week]
-
-        parsed_workouts = []
-        for workout in week:
-            w = progress_day(user=josh, workout=workout, week_goal="Increase")
-            print(w)
-            p = parse_workouts(w)
-            parsed_workouts.append(p[0])
+        week = WorkoutWeek(content=week)
+        
+        wk = progress_week(josh, week,josh_feedback, week_goal="Increase")
+        print(wk)
+        parsed_workouts = parse_workouts(wk)
+        #for workout in week:
+        #    w = progress_day(user=josh, workout=workout, week_goal="Increase")
+        #    print(w)
+        #    p = parse_workouts(w)
+        #    parsed_workouts.append(p[0])
 
         with open(f"week_{week_num+1}.json", "w") as f:
             json.dump([d.model_dump() for d in parsed_workouts], f, indent=2)

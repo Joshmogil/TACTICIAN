@@ -1,3 +1,4 @@
+import app.db
 from pydantic import BaseModel
 import pandas as pd
 from typing import Literal, Optional, List
@@ -78,6 +79,12 @@ Monday:
 class WorkoutWeek(BaseModel):
     content : List[WorkoutDay]
 
+    def semantic(self):
+        workouts = ""
+        for workout in self.content:
+            workouts = workouts + workout.semantic() + "\n"
+        return workouts
+
 if __name__ == "__main__":
 
     # Updated data: include amount_unit and intensity_unit
@@ -90,7 +97,7 @@ if __name__ == "__main__":
             intensity=165.0,
             actual_intensity=160.0,
             intensity_unit="bpm",
-            perceived_exertion=7
+            perceived_exertion="High"
         ),
         WorkDone(
             exercise="Staircase Pullup",
@@ -100,7 +107,7 @@ if __name__ == "__main__":
             intensity=0.0,
             actual_intensity=0.0,
             intensity_unit="",
-            perceived_exertion=8
+            perceived_exertion="High"
         ),
         WorkDone(
             exercise="Pole Press",
@@ -110,7 +117,7 @@ if __name__ == "__main__":
             intensity=0.0,
             actual_intensity=0.0,
             intensity_unit="",
-            perceived_exertion=7
+            perceived_exertion="High"
         ),
         WorkDone(
             exercise="Vertical hops",
@@ -120,8 +127,15 @@ if __name__ == "__main__":
             intensity=0.0,
             actual_intensity=0.0,
             intensity_unit="",
-            perceived_exertion=6
+            perceived_exertion="High"
         ),
     ]
     print(WorkoutDay(day="Monday", workout=workdone_list).semantic())
     print(WorkoutDay.example())
+
+    wk = WorkoutWeek(content=[
+        WorkoutDay(day="Monday", workout=workdone_list),
+        WorkoutDay(day="Tuesday", workout=workdone_list),
+        WorkoutDay(day="Wednesday", workout=workdone_list)
+    ])
+    print(wk.semantic())

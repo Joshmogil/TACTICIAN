@@ -1,0 +1,31 @@
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
+Dynamic Warm-up,5.0,0.0,min,0.0,0.0,None,Low
+Dumbbell Overhead Press,12.0,0.0,reps,25.0,0.0,lbs,Medium
+Dumbbell Overhead Press,10.0,0.0,reps,30.0,0.0,lbs,Medium
+Dumbbell Overhead Press,8.0,0.0,reps,35.0,0.0,lbs,High
+Lat Pulldown,12.0,0.0,reps,80.0,0.0,lbs,Medium
+Lat Pulldown,10.0,0.0,reps,90.0,0.0,lbs,Medium
+Lat Pulldown,8.0,0.0,reps,100.0,0.0,lbs,High
+Lat Pulldown,8.0,0.0,reps,100.0,0.0,lbs,High
+Dumbbell Row,10.0,0.0,reps,35.0,0.0,lbs,Medium
+Dumbbell Row,10.0,0.0,reps,40.0,0.0,lbs,Medium
+Dumbbell Row,8.0,0.0,reps,45.0,0.0,lbs,High
+Face Pulls,20.0,0.0,reps,30.0,0.0,lbs,Medium
+Face Pulls,15.0,0.0,reps,35.0,0.0,lbs,Medium
+Face Pulls,15.0,0.0,reps,35.0,0.0,lbs,High
+Dumbbell Lateral Raise,15.0,0.0,reps,15.0,0.0,lbs,Medium
+Dumbbell Lateral Raise,12.0,0.0,reps,20.0,0.0,lbs,Medium
+Dumbbell Lateral Raise,10.0,0.0,reps,25.0,0.0,lbs,High
+Dumbbell Shrugs,15.0,0.0,reps,50.0,0.0,lbs,Medium
+Dumbbell Shrugs,15.0,0.0,reps,55.0,0.0,lbs,Medium
+Dumbbell Shrugs,12.0,0.0,reps,60.0,0.0,lbs,High
+Farmer's Carry,50.0,0.0,meters,45.0,0.0,lbs,Medium
+Farmer's Carry,40.0,0.0,meters,50.0,0.0,lbs,Medium
+Farmer's Carry,30.0,0.0,meters,55.0,0.0,lbs,High
+Dumbbell Bicep Curl,12.0,0.0,reps,20.0,0.0,lbs,Medium
+Dumbbell Bicep Curl,10.0,0.0,reps,25.0,0.0,lbs,High
+Dumbbell Bicep Curl,8.0,0.0,reps,30.0,0.0,lbs,High
+Dumbbell Tricep Extension,12.0,0.0,reps,25.0,0.0,lbs,Medium
+Dumbbell Tricep Extension,10.0,0.0,reps,30.0,0.0,lbs,High
+Dumbbell Tricep Extension,8.0,0.0,reps,35.0,0.0,lbs,High
+Cool-down Stretch,7.0,0.0,min,0.0,0.0,None,Low

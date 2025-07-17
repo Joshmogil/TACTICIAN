@@ -1,0 +1,21 @@
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
+Dynamic Warm-up,5.0,0.0,min,0.0,0.0,None,Low
+Jogging,40.0,0.0,min,150.0,0.0,bpm,Medium
+Plank,60.0,0.0,seconds,0.0,0.0,None,Medium
+Plank,75.0,0.0,seconds,0.0,0.0,None,High
+Plank,75.0,0.0,seconds,0.0,0.0,None,High
+Side Plank,45.0,0.0,seconds,0.0,0.0,None,Medium
+Side Plank,45.0,0.0,seconds,0.0,0.0,None,Medium
+Russian Twists,20.0,0.0,reps,15.0,0.0,lbs,Medium
+Russian Twists,20.0,0.0,reps,15.0,0.0,lbs,Medium
+Russian Twists,15.0,0.0,reps,20.0,0.0,lbs,High
+Bird-Dog,12.0,0.0,reps,0.0,0.0,None,Medium
+Bird-Dog,12.0,0.0,reps,0.0,0.0,None,Medium
+Bird-Dog,10.0,0.0,reps,0.0,0.0,None,High
+Hamstring Stretch,45.0,0.0,seconds,0.0,0.0,None,Medium
+Quad Stretch,45.0,0.0,seconds,0.0,0.0,None,Medium
+Hip Flexor Stretch,45.0,0.0,seconds,0.0,0.0,None,Medium
+Calf Stretch,45.0,0.0,seconds,0.0,0.0,None,Medium
+Glute Stretch,45.0,0.0,seconds,0.0,0.0,None,Medium
+Chest Stretch,30.0,0.0,seconds,0.0,0.0,None,Medium
+Tricep Stretch,30.0,0.0,seconds,0.0,0.0,None,Medium
