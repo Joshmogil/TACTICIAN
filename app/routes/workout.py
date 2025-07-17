@@ -11,10 +11,14 @@ from app.auth import (
 
 )
 
+from app.db import user as user_db
 from app.db import workout as workout_db
 from app.db.models import User
 from app.workout import WorkoutWeek
 from app.user import UserInfo
+
+from app.ai.first_week import generate_raw_week, parse_workouts
+from app.ai.progress_week import progress_week
 
 class WorkoutChunkCreate(BaseModel):
     """Payload for creating a workout chunk."""
@@ -33,7 +37,6 @@ class WorkoutChunkOut(BaseModel):
     """Representation of a workout chunk returned by the API."""
 
     id: UUID
-    user_id: UUID
     workouts: WorkoutWeek
     created_at: datetime
     completed_at: Optional[datetime] = None
@@ -43,16 +46,18 @@ router = APIRouter(prefix="/workouts", tags=["workouts"])
 
 
 @router.post("/", response_model=WorkoutChunkOut)
-async def create_workout_chunk(payload: WorkoutChunkCreate, current_user: User = Depends(get_current_user)) -> WorkoutChunkOut:
+async def create_workout_chunk(from_scratch: bool = False, current_user: User = Depends(get_current_user)) -> WorkoutChunkOut:
     """Create a new workout chunk for a user."""
 
+    raw_week = generate_raw_week(user=current_user.info)
+    week = parse_workouts(raw_text=raw_week)
+    workout_week = WorkoutWeek(content=week)
     chunk = await workout_db.create_workout_chunk(
-        payload.user_id, payload.workouts
+        current_user.id, workout_week
     )
     return WorkoutChunkOut(
         id=chunk.id,
-        user_id=chunk.user_id,
-        workouts=payload.workouts,
+        workouts=workout_week,
         created_at=chunk.created_at,
         completed_at=chunk.completed_at,
     )
