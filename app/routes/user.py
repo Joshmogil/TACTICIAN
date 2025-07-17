@@ -58,7 +58,7 @@ async def read_user(current_user: User = Depends(get_current_user)) -> UserOut:
 async def update_user(payload: UserUpdate, current_user: User = Depends(get_current_user)) -> UserOut:
     """Update the profile for an existing user."""
 
-    updated = await user_db.update_user_profile(user_id, payload.info)
+    updated = await user_db.update_user_profile(current_user.id, payload.info)
     if not updated:
         raise HTTPException(status_code=404, detail="User not found")
 

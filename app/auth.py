@@ -6,27 +6,14 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from pydantic import BaseModel
-from pydantic_settings import BaseSettings
+
 
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
 from app.db.user import get_user_by_email
 
-# --- Configuration ---
-class Settings(BaseSettings):
-    SECRET_KEY: str = "a_very_secret_key_that_should_be_in_a_env_file"
-    ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    GOOGLE_CLIENT_ID: str = "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
-    GEMINI_API_KEY: str = 'top_secret-api_key'
-    TEST_USER_PASS: str = 'super-duper-secret'
-
-
-    class Config:
-        env_file = ".env"
-
-settings = Settings()
+from app.settings import settings
 
 # --- Pydantic Models ---
 class TokenData(BaseModel):

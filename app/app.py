@@ -3,6 +3,8 @@ from typing import List
 from contextlib import asynccontextmanager
 from pydantic import BaseModel
 
+from app.settings import settings
+
 from app.workout import WorkoutDay
 from app.auth import (
     create_access_token,
@@ -16,6 +18,7 @@ from app.routes.workout import router as workout_router
 from app.db.models import User
 
 from tortoise import Tortoise
+
 
 TEST_USER = test_users['josh']
 
@@ -52,6 +55,11 @@ app.include_router(workout_router)
 class ProviderToken(BaseModel):
     token: str
 
+# Pydantic model for login request
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
 @app.post("/auth/login/google", response_model=Token)
 async def login_with_google(provider_token: ProviderToken):
     idinfo = verify_google_token(provider_token.token)
@@ -68,6 +76,15 @@ async def login_with_google(provider_token: ProviderToken):
     # Create an access token for your app
     access_token = create_access_token(data={"sub": user_email})
     return {"access_token": access_token, "token_type": "bearer"}
+
+@app.post("/auth/login/basic", response_model=Token)
+async def login_with_basic(creds: LoginRequest):
+    if creds.email != "test@gmail.com" or creds.password != settings.TEST_USER_PASS:
+        raise HTTPException(status_code=401, detail="Invalid email or password")
+    else:
+        access_token = create_access_token(data={"sub": "test@gmail.com"})
+        return {"access_token": access_token, "token_type": "bearer"}
+    
 
 # Example of a protected endpoint
 @app.get("/users/me", response_model=UserInfo)
