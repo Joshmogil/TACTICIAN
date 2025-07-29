@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct ContentView: View {
+    var body: some View {
+        Text("Hello World")
+    }
+}
+
+#Preview {
+    ContentView()
+}
+
+
+
 @main
 struct grooveApp: App {
     var body: some Scene {
@@ -15,3 +27,4 @@ struct grooveApp: App {
         }
     }
 }
+

@@ -1,8 +1,7 @@
-import app.db
 from pydantic import BaseModel
 import pandas as pd
 from typing import Literal, Optional, List
-
+import datetime as dt
 
 WeekDay = Literal["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
@@ -46,6 +45,7 @@ def dataframe_to_workdone_list(df: pd.DataFrame) -> List[WorkDone]:
 
 class WorkoutDay(BaseModel):
     day: WeekDay
+    date: Optional[dt.date] = None  # Optional date field
     workout: List[WorkDone]
 
     def workout_df(self):

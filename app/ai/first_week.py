@@ -5,6 +5,8 @@ from app.user import UserInfo, test_users, interests_prompt
 from app.test import USER
 from app.ai.tools import parse_workouts
 from typing import List
+from app.ai.models import FLASH, PRO, MODEL
+
 
 dotenv.load_dotenv()
 
@@ -14,7 +16,7 @@ def generate_raw_week(user: UserInfo):
     client = genai.Client()
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash", contents=f"""
+        model=MODEL, contents=f"""
 Response should be comma seperated values
 Response should contain just workouts as CSV. No explanations or dialogues.
 You are the {interests_prompt(user.interests)} trainer for the following user:

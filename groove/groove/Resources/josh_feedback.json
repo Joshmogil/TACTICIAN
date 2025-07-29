@@ -1,0 +1,36 @@
+{
+  "biceps": "Just right",
+  "triceps": "Just right",
+  "forearms": "Just right",
+  "hands": "Just right",
+  "rear_deltoids": "Not enough",
+  "middle_deltoids": "Not enough",
+  "front_deltoids": "Just right",
+  "upper_chest": "Just right",
+  "chest": "Just right",
+  "traps": "Not enough",
+  "upper_back": "Not enough",
+  "lats": "Not enough",
+  "abs": "Just right",
+  "obliques": "Just right",
+  "lower_back": "Just right",
+  "glutes": "Just right",
+  "hamstrings": "Just right",
+  "quads": "Just right",
+  "calves": "Just right",
+  "interest_reports": {
+    "lifting weights": [
+      "More volume"
+    ],
+    "stretching": [
+      "More often"
+    ],
+    "functional strength training": [
+      "More volume"
+    ],
+    "cardio": [
+      "More exercise variety",
+      "More often"
+    ]
+  }
+}

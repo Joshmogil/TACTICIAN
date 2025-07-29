@@ -4,6 +4,8 @@ from app.test import USER
 
 Skill = Literal["New","Novice","Intermediate", "Advanced"]
 
+ActivityLevel = Literal["Inactive","Active", "Highly Active"]
+
 MuscleReportOption = Literal["Not enough", "Just right", "Too much"]
 
 InterestReportOption = Literal[
@@ -29,25 +31,25 @@ class Interest(BaseModel):
     skill: Skill
 
 
-def get_vigour(age: int, activity_level: int):
-    if age < 30 and activity_level == 3:
+def get_vigour(age: int, activity_level: ActivityLevel) -> str:
+    if age < 30 and activity_level == "Highly Active":
         return "challenging"
-    if age >= 30 and activity_level == 3:
+    if age >= 30 and activity_level == "Highly Active":
         return "moderately challenging"
-    if age >= 55 and activity_level == 2:
+    if age >= 55 and activity_level == "Active":
         return "cautiously challenging"
-    if age < 30 and activity_level == 2:
+    if age < 30 and activity_level == "Active":
         return "moderately challenging"
     
-def activity_semantic(activity_level:int):
+def activity_semantic(activity_level:ActivityLevel):
 
-    if activity_level == 1:
+    if activity_level == "Inactive":
         return "inactive"
     
-    if activity_level == 2:
+    if activity_level == "Active":
         return "moderately active"
     
-    if activity_level == 3:
+    if activity_level ==  "Highly Active":
         return "highly active"
     
 def interests_prompt(interests: list['Interest']):
@@ -69,7 +71,7 @@ class UserInfo(BaseModel):
 
     favorite_exercises: list[str]
     age: int 
-    activity_level: int # 1-3
+    activity_level: ActivityLevel
 
     def semantic(self):
 
@@ -224,7 +226,7 @@ test_users={
             "dumbbell lunge"
         ],
         age="27",
-        activity_level=2,
+        activity_level="Active",
         gender="male",
         name="Josh"
     ),
@@ -245,7 +247,7 @@ test_users={
             "dumbbell lunge"
         ],
         age="55",
-        activity_level=2,
+        activity_level="Active",
         gender="female",
         name="Veronica"
     ),
@@ -262,7 +264,7 @@ test_users={
         favorite_exercises=[
         ],
         age="28",
-        activity_level=2,
+        activity_level="Highly Active",
         gender="male",
         name="Spencer"
     )

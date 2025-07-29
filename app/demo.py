@@ -33,7 +33,7 @@ josh = UserInfo(
         "lat pulldown"
     ],
     age="27",
-    activity_level=2,
+    activity_level="Active",
     gender="male",
     name="Josh"
 )
@@ -61,7 +61,6 @@ josh_feedback=UserFeedback(
 
     interest_reports={
         "lifting weights":[
-            "More difficulty",
             "More volume",
         ],
         "stretching":[
@@ -119,4 +118,11 @@ def main():
                 df.to_csv(f"week_{week_num+1}_day_{i+1}_{d.day}.csv", index=False)
 
 if __name__ == "__main__":
+    import json
+    with open("josh.json", "w") as f:
+        json.dump(josh.model_dump(), f, indent=2)
+    
+    with open("josh_feedback.json", "w") as f:
+        json.dump(josh_feedback.model_dump(), f, indent=2)
+
     main()

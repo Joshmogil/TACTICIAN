@@ -7,6 +7,8 @@ from app.ai.tools import parse_workouts
 from google import genai
 import dotenv
 from typing import List, Literal
+from app.ai.models import FLASH, PRO, MODEL
+
 
 dotenv.load_dotenv()
 
@@ -50,7 +52,7 @@ Adjust the following workout to {difficulty_semantic}
     print(prompt)
     
     response = client.models.generate_content(
-        model="gemini-2.5-flash", contents=prompt
+        model=MODEL, contents=prompt
     )
     return response.text
 
@@ -90,9 +92,10 @@ Overall, adjust the user's previous week to {difficulty_semantic}
 
 # Make sure to follow the <Week Day>: <Workout as CSV> format, do not include column names
 # Make sure to use the same week days from the previosue week
-# Remove/add exercises as needed to accomdate the user's feedback
-# Pay special attention to the user's feedback on how well muscles were used, try to make eveyrthing 'just right'
-# Pay special attention to the user opinion on their interests
+# Remove/add exercises as needed to accomodate the user's feedback
+# Pay special attention to the user opinion on their interests and feedback on muscle groups
+# When adding or removing things, try to keep the same number of sets and reps as the previous week
+# Feel free to add new exercises, but make sure they are relevant to the user, 
 
 The user has the following feedback for the week:
 {feedback.semantic()}
@@ -103,7 +106,7 @@ User's Previous week:
     print(prompt)
     
     response = client.models.generate_content(
-        model="gemini-2.5-flash", contents=prompt
+        model=MODEL, contents=prompt
     )
     return response.text
 
