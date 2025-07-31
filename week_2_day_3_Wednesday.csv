@@ -1,10 +1,9 @@
-exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
-Dynamic Warm-up,5.0,5.0,min,0.0,0.0,None,Low
-Rowing Machine,25.0,25.0,min,145.0,0.0,bpm,Medium
-Hamstring Stretch,60.0,60.0,seconds,0.0,0.0,None,Medium
-Quad Stretch,60.0,60.0,seconds,0.0,0.0,None,Medium
-Hip Flexor Stretch,60.0,60.0,seconds,0.0,0.0,None,Medium
-Pigeon Pose,60.0,60.0,seconds,0.0,0.0,None,Medium
-Doorway Chest Stretch,60.0,60.0,seconds,0.0,0.0,None,Medium
-Lat Stretch,60.0,60.0,seconds,0.0,0.0,None,Medium
-Cross-body Shoulder Stretch,60.0,60.0,seconds,0.0,0.0,None,Medium
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit
+Dynamic Warm-up,5.0,0.0,min,0.0,0.0,None
+Rowing Machine,25.0,0.0,min,140.0,0.0,bpm
+Hamstring Stretch,60.0,0.0,seconds,0.0,0.0,None
+Quad Stretch,60.0,0.0,seconds,0.0,0.0,None
+Pigeon Pose,60.0,0.0,seconds,0.0,0.0,None
+Chest Stretch,60.0,0.0,seconds,0.0,0.0,None
+Lat Stretch,60.0,0.0,seconds,0.0,0.0,None
+Cat-Cow,10.0,0.0,reps,0.0,0.0,None

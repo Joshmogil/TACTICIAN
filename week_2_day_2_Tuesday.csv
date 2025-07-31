@@ -1,18 +1,18 @@
-exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
-Dynamic Warm-up,5.0,5.0,min,0.0,0.0,None,Low
-Goblet Squat,12.0,12.0,reps,35.0,0.0,lbs,Medium
-Goblet Squat,10.0,10.0,reps,40.0,0.0,lbs,Medium
-Goblet Squat,8.0,8.0,reps,45.0,0.0,lbs,High
-Dumbbell Lunge,10.0,10.0,reps,25.0,0.0,lbs,Medium
-Dumbbell Lunge,10.0,10.0,reps,25.0,0.0,lbs,Medium
-Dumbbell Lunge,8.0,8.0,reps,30.0,0.0,lbs,High
-Dumbbell Romanian Deadlift,12.0,12.0,reps,35.0,0.0,lbs,Medium
-Dumbbell Romanian Deadlift,10.0,10.0,reps,40.0,0.0,lbs,Medium
-Dumbbell Romanian Deadlift,10.0,10.0,reps,40.0,0.0,lbs,High
-Farmer's Carry,40.0,40.0,meters,45.0,0.0,lbs,Medium
-Farmer's Carry,40.0,40.0,meters,50.0,0.0,lbs,Medium
-Farmer's Carry,40.0,40.0,meters,50.0,0.0,lbs,High
-Standing Calf Raise,20.0,20.0,reps,15.0,0.0,lbs,Medium
-Standing Calf Raise,15.0,15.0,reps,20.0,0.0,lbs,Medium
-Standing Calf Raise,15.0,15.0,reps,20.0,0.0,lbs,High
-Lower Body Stretch,5.0,5.0,min,0.0,0.0,None,Low
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit
+Dynamic Warm-up,5.0,0.0,min,0.0,0.0,None
+Goblet Squat,12.0,0.0,reps,35.0,0.0,lbs
+Goblet Squat,10.0,0.0,reps,40.0,0.0,lbs
+Goblet Squat,8.0,0.0,reps,45.0,0.0,lbs
+Dumbbell Lunge,10.0,0.0,reps,25.0,0.0,lbs
+Dumbbell Lunge,10.0,0.0,reps,30.0,0.0,lbs
+Dumbbell Lunge,8.0,0.0,reps,35.0,0.0,lbs
+Dumbbell Romanian Deadlift,12.0,0.0,reps,35.0,0.0,lbs
+Dumbbell Romanian Deadlift,10.0,0.0,reps,40.0,0.0,lbs
+Dumbbell Romanian Deadlift,8.0,0.0,reps,45.0,0.0,lbs
+Glute Bridge,15.0,0.0,reps,30.0,0.0,lbs
+Glute Bridge,12.0,0.0,reps,35.0,0.0,lbs
+Plank,75.0,0.0,seconds,0.0,0.0,None
+Plank,75.0,0.0,seconds,0.0,0.0,None
+Lying Leg Raise,20.0,0.0,reps,0.0,0.0,None
+Lying Leg Raise,20.0,0.0,reps,0.0,0.0,None
+Cool-down Stretch,5.0,0.0,min,0.0,0.0,None

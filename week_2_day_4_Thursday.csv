@@ -1,18 +1,20 @@
-exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
-Dynamic Warm-up,5.0,5.0,min,0.0,0.0,None,Low
-Dumbbell Overhead Press,10.0,10.0,reps,25.0,0.0,lbs,Medium
-Dumbbell Overhead Press,8.0,8.0,reps,30.0,0.0,lbs,Medium
-Dumbbell Overhead Press,6.0,6.0,reps,35.0,0.0,lbs,High
-Dumbbell Row,10.0,10.0,reps,35.0,0.0,lbs,Medium
-Dumbbell Row,10.0,10.0,reps,40.0,0.0,lbs,Medium
-Dumbbell Row,8.0,8.0,reps,45.0,0.0,lbs,High
-Dumbbell Lateral Raise,15.0,15.0,reps,10.0,0.0,lbs,Medium
-Dumbbell Lateral Raise,12.0,12.0,reps,15.0,0.0,lbs,Medium
-Dumbbell Lateral Raise,12.0,12.0,reps,15.0,0.0,lbs,High
-Face Pulls,15.0,15.0,reps,30.0,0.0,lbs,Medium
-Face Pulls,15.0,15.0,reps,30.0,0.0,lbs,Medium
-Face Pulls,12.0,12.0,reps,35.0,0.0,lbs,High
-Dumbbell Shrugs,15.0,15.0,reps,40.0,0.0,lbs,Medium
-Dumbbell Shrugs,12.0,12.0,reps,45.0,0.0,lbs,Medium
-Dumbbell Shrugs,10.0,10.0,reps,50.0,0.0,lbs,High
-Upper Body Stretch,5.0,5.0,min,0.0,0.0,None,Low
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit
+Dynamic Warm-up,5.0,0.0,min,0.0,0.0,None
+Pull-ups,8.0,0.0,reps,0.0,0.0,None
+Pull-ups,6.0,0.0,reps,0.0,0.0,None
+Pull-ups,5.0,0.0,reps,0.0,0.0,None
+Lat Pulldown,12.0,0.0,reps,90.0,0.0,lbs
+Lat Pulldown,10.0,0.0,reps,100.0,0.0,lbs
+Lat Pulldown,8.0,0.0,reps,110.0,0.0,lbs
+Dumbbell Row,10.0,0.0,reps,35.0,0.0,lbs
+Dumbbell Row,10.0,0.0,reps,40.0,0.0,lbs
+Dumbbell Row,8.0,0.0,reps,45.0,0.0,lbs
+Face Pulls,15.0,0.0,reps,30.0,0.0,lbs
+Face Pulls,12.0,0.0,reps,35.0,0.0,lbs
+Face Pulls,12.0,0.0,reps,35.0,0.0,lbs
+Dumbbell Shrugs,15.0,0.0,reps,40.0,0.0,lbs
+Dumbbell Shrugs,12.0,0.0,reps,45.0,0.0,lbs
+Dumbbell Shrugs,10.0,0.0,reps,50.0,0.0,lbs
+Dumbbell Bicep Curl,12.0,0.0,reps,20.0,0.0,lbs
+Dumbbell Bicep Curl,10.0,0.0,reps,22.5,0.0,lbs
+Cool-down Stretch,5.0,0.0,min,0.0,0.0,None

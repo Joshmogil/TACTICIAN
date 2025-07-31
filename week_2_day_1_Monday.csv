@@ -1,18 +1,18 @@
-exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
-Dynamic Warm-up,5.0,5.0,min,0.0,0.0,None,Low
-Dumbbell Bench Press,10.0,10.0,reps,35.0,0.0,lbs,Medium
-Dumbbell Bench Press,8.0,8.0,reps,40.0,0.0,lbs,Medium
-Dumbbell Bench Press,6.0,6.0,reps,45.0,0.0,lbs,High
-Pull-ups,8.0,8.0,reps,0.0,0.0,None,Medium
-Pull-ups,6.0,6.0,reps,0.0,0.0,None,High
-Pull-ups,6.0,6.0,reps,0.0,0.0,None,High
-Lat Pulldown,12.0,12.0,reps,80.0,0.0,lbs,Medium
-Lat Pulldown,10.0,10.0,reps,90.0,0.0,lbs,Medium
-Lat Pulldown,10.0,10.0,reps,90.0,0.0,lbs,High
-Incline Dumbbell Press,12.0,12.0,reps,25.0,0.0,lbs,Medium
-Incline Dumbbell Press,10.0,10.0,reps,30.0,0.0,lbs,Medium
-Incline Dumbbell Press,10.0,10.0,reps,30.0,0.0,lbs,High
-Dumbbell Curl and Press,10.0,10.0,reps,20.0,0.0,lbs,Medium
-Dumbbell Curl and Press,10.0,10.0,reps,20.0,0.0,lbs,Medium
-Dumbbell Curl and Press,8.0,8.0,reps,25.0,0.0,lbs,High
-Upper Body Stretch,5.0,5.0,min,0.0,0.0,None,Low
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit
+Dynamic Warm-up,5.0,0.0,min,0.0,0.0,None
+Dumbbell Bench Press,12.0,0.0,reps,35.0,0.0,lbs
+Dumbbell Bench Press,10.0,0.0,reps,40.0,0.0,lbs
+Dumbbell Bench Press,8.0,0.0,reps,45.0,0.0,lbs
+Dumbbell Bench Press,8.0,0.0,reps,45.0,0.0,lbs
+Dumbbell Overhead Press,12.0,0.0,reps,25.0,0.0,lbs
+Dumbbell Overhead Press,10.0,0.0,reps,30.0,0.0,lbs
+Dumbbell Overhead Press,8.0,0.0,reps,35.0,0.0,lbs
+Dumbbell Lateral Raise,15.0,0.0,reps,10.0,0.0,lbs
+Dumbbell Lateral Raise,12.0,0.0,reps,12.5,0.0,lbs
+Dumbbell Lateral Raise,12.0,0.0,reps,12.5,0.0,lbs
+Push-up,18.0,0.0,reps,0.0,0.0,None
+Push-up,15.0,0.0,reps,0.0,0.0,None
+Dumbbell Tricep Extension,12.0,0.0,reps,25.0,0.0,lbs
+Dumbbell Tricep Extension,10.0,0.0,reps,27.5,0.0,lbs
+Dumbbell Tricep Extension,10.0,0.0,reps,27.5,0.0,lbs
+Cool-down Stretch,5.0,0.0,min,0.0,0.0,None

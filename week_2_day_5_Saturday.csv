@@ -1,19 +1,13 @@
-exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit,perceived_exertion
-Dynamic Warm-up,5.0,5.0,min,0.0,0.0,None,Low
-Stair Climber,20.0,20.0,min,150.0,0.0,bpm,Medium
-Dumbbell Bench Press,15.0,15.0,reps,30.0,0.0,lbs,Low
-Dumbbell Bench Press,12.0,12.0,reps,35.0,0.0,lbs,Medium
-Dumbbell Bench Press,12.0,12.0,reps,35.0,0.0,lbs,Medium
-Lat Pulldown,15.0,15.0,reps,70.0,0.0,lbs,Low
-Lat Pulldown,12.0,12.0,reps,80.0,0.0,lbs,Medium
-Lat Pulldown,12.0,12.0,reps,80.0,0.0,lbs,Medium
-Dumbbell Lunge,12.0,12.0,reps,20.0,0.0,lbs,Medium
-Dumbbell Lunge,12.0,12.0,reps,20.0,0.0,lbs,Medium
-Dumbbell Lunge,10.0,10.0,reps,25.0,0.0,lbs,High
-Plank,60.0,60.0,seconds,0.0,0.0,None,Medium
-Plank,60.0,60.0,seconds,0.0,0.0,None,Medium
-Plank,60.0,60.0,seconds,0.0,0.0,None,High
-Russian Twists,20.0,20.0,reps,15.0,0.0,lbs,Medium
-Russian Twists,15.0,15.0,reps,20.0,0.0,lbs,Medium
-Russian Twists,15.0,15.0,reps,20.0,0.0,lbs,High
-Cool-down Stretch,5.0,5.0,min,0.0,0.0,None,Low
+exercise,amount,actual_amount,amount_unit,intensity,actual_intensity,intensity_unit
+Dynamic Warm-up,5.0,0.0,min,0.0,0.0,None
+Dumbbell Curl and Press,12.0,0.0,reps,20.0,0.0,lbs
+Dumbbell Curl and Press,10.0,0.0,reps,25.0,0.0,lbs
+Dumbbell Curl and Press,8.0,0.0,reps,27.5,0.0,lbs
+Farmer's Carry,50.0,0.0,meters,45.0,0.0,lbs
+Farmer's Carry,50.0,0.0,meters,50.0,0.0,lbs
+Farmer's Carry,40.0,0.0,meters,55.0,0.0,lbs
+Kettlebell Swings,20.0,0.0,reps,35.0,0.0,lbs
+Kettlebell Swings,15.0,0.0,reps,40.0,0.0,lbs
+Kettlebell Swings,15.0,0.0,reps,40.0,0.0,lbs
+Stair Climber,15.0,0.0,min,165.0,0.0,bpm
+Cool-down Stretch,5.0,0.0,min,0.0,0.0,None

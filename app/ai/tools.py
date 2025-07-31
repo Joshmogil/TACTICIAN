@@ -26,7 +26,7 @@ def parse_workouts(raw_text: str) -> List[WorkoutDay]:
         workout_objs = []
         for line in lines:
             parts = [p.strip() for p in line.split(",")]
-            if len(parts) < 8:
+            if len(parts) < 7:
                 continue  # skip malformed lines
             try:
                 workout_objs.append(
@@ -37,8 +37,8 @@ def parse_workouts(raw_text: str) -> List[WorkoutDay]:
                         amount_unit=parts[3],
                         intensity=float(parts[4]),
                         actual_intensity=float(parts[5]),
-                        intensity_unit=parts[6] if parts[6] else "",
-                        perceived_exertion=parts[7] if parts[7] else None
+                        intensity_unit=parts[6] if parts[6] else ""
+                        #perceived_exertion=parts[7] if parts[7] else None
                     )
                 )
             except Exception as e:
