@@ -212,9 +212,6 @@ struct EditableDoubleField: View {
     }
 }
 #Preview {
-    Group {
-        ExerciseRow(exercise:
-                        ModelData().workouts[0].workout[0])
-    }
-    
+    @State var sample = ModelData().workouts[0].workout[0]
+    return ExerciseRow(exercise: $sample)
 }
