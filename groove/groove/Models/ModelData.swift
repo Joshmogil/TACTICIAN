@@ -7,10 +7,8 @@
 
 import Foundation
 
-@Observable
-class ModelData {
-    var workouts: [Workout] = load("week_2.json")
-    
+final class ModelData: ObservableObject {
+    @Published var workouts: [Workout] = load("week_2.json")
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

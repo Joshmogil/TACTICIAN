@@ -19,8 +19,8 @@ struct Exercise: Codable, Hashable, Identifiable {
     var intensity: Double
     var actual_intensity: Double
     var intensity_unit: String
-    var perceived_exertion: String? = "?"
-    var done: Bool? = false
+    var perceived_exertion: String? = "Easy"
+    var done: Bool = false
     
 }
 

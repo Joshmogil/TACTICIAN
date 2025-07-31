@@ -11,6 +11,6 @@ struct WorkoutView: View {
 }
 
 #Preview {
-    @State var workout = ModelData().workouts[0]
+    @Previewable @State var workout = ModelData().workouts[0]
     return WorkoutView(workout: $workout)
 }
