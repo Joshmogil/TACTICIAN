@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WorkoutView: View {
-    @Binding var workout: Workout
+    @Binding var workout: WorkoutData
 
     var body: some View {
         List {

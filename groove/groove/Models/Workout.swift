@@ -25,7 +25,7 @@ struct Exercise: Codable, Hashable, Identifiable {
 }
 
 
-struct Workout: Codable, Hashable, Identifiable {
+struct WorkoutData: Codable, Hashable, Identifiable {
     var id: UUID { _id ?? UUID() }
     private var _id: UUID?
     
