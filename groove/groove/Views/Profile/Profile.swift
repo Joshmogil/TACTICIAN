@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Profile: View {
-    @StateObject private var model = ModelData()
+    @EnvironmentObject var model: ModelData
     
     var body: some View {
         Text(model.profile.name)
@@ -16,5 +16,5 @@ struct Profile: View {
 }
 
 #Preview {
-    Profile()
+    Profile().environmentObject(ModelData())
 }

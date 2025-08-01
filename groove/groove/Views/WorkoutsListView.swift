@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WorkoutsListView: View {
-    @StateObject private var model = ModelData()
+    @EnvironmentObject var model: ModelData
 
     var body: some View {
         List {
@@ -15,5 +15,5 @@ struct WorkoutsListView: View {
 }
 
 #Preview {
-    WorkoutsListView()
+    WorkoutsListView().environmentObject(ModelData())
 }
