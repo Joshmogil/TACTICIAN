@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ExerciseRow: View {
     @Binding var exercise: Exercise
+    var onDelete: () -> Void = {}
     
     private let exertionLevels = ["Easy": Color.blue,
                                   "Medium": Color.orange,
@@ -104,16 +105,13 @@ struct ExerciseRow: View {
             }
         }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
-            Button {
+            Button(role: .destructive) {
                 withAnimation {
-                    // This should delete the set from the workout 
+                    onDelete()
                 }
             } label: {
-                
-                Label("Delete Set", systemImage: "trash").tint(.red)
+                Label("Delete Set", systemImage: "trash")
             }
-            .tint(.gray)
-            
         }
     }
     

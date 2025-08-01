@@ -5,8 +5,10 @@ struct WorkoutView: View {
 
     var body: some View {
         List {
-            ForEach($workout.workout) { $exercise in
-                ExerciseRow(exercise: $exercise)
+            ForEach(workout.workout.indices, id: \.self) { idx in
+                ExerciseRow(exercise: $workout.workout[idx]) {
+                    workout.workout.remove(at: idx)
+                }
             }
         }
     }
